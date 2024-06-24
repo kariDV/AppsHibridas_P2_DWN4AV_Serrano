@@ -88,8 +88,6 @@
 ```json
 [
   {
-    "_id": "6678f063e88984536c62ff38",
-    "id": 1,
     "email": "karina@gmail.com",
     "password": "$&FHJEIWHFJWKHFFJWEKFDSFSD"
   }

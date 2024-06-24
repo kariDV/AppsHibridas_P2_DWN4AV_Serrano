@@ -5,4 +5,13 @@ async function getUsuarios() {
   return usuarios;
 }
 
-export { getUsuarios };
+async function createUsuario(body) {
+  let nuevoUsuario = new Usuarios({
+    email: body.email,
+    password: body.password,
+  });
+
+  return await nuevoUsuario.save();
+}
+
+export { getUsuarios, createUsuario };
