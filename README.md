@@ -4,7 +4,8 @@
 
     PORT = 3000
     MONGO_URL = "mongodb://127.0.0.1:27017/APIBoardDB"
-    TOKEN = "4Lwhkcl9IU0tQV16dtuti80eMyp4oetzTHjwU4m9sKOvIx5GTaUBIYSiQ62c2vh5"
+    SEED=4Lwhkcl9IU0tQV16dtuti80eMyp4oetzTHjwU4m9sKOvIx5GTaUBIYSiQ62c2vh5
+    EXPIRATION=10
 
 # Datos de prueba para MONGO DB (Juegos)
 
@@ -89,7 +90,11 @@
 [
   {
     "email": "karina@gmail.com",
-    "password": "$&FHJEIWHFJWKHFFJWEKFDSFSD"
+    "password": "cafecortado123"
+  },
+  {
+    "email": "tedmosby@gmail.com",
+    "password": "terracel0v3"
   }
 ]
 ```
