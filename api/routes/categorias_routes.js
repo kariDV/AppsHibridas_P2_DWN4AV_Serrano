@@ -1,4 +1,4 @@
-import express from "express";
+import express from 'express';
 import {
   getCategorias,
   getCategoriaNombre,
@@ -6,11 +6,12 @@ import {
   createCategoria,
   updateCatId,
   deleteCatId,
-} from "../controllers/categorias_controller.js";
+} from '../controllers/categorias_controller.js';
+import verificarToken from '../middlewares/auth.js';
 
 const ruta = express.Router();
 
-ruta.get("/", (req, res) => {
+ruta.get('/', (req, res) => {
   let resultado;
   if (req.query.categoria) {
     resultado = getCategoriaNombre(req.query.categoria);
@@ -22,7 +23,7 @@ ruta.get("/", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.get("/:id", (req, res) => {
+ruta.get('/:id', (req, res) => {
   let id = req.params.id;
   let resultado = getCategoriaId(id);
   resultado
@@ -30,13 +31,13 @@ ruta.get("/:id", (req, res) => {
       if (cat.length) {
         res.status(200).json(cat);
       } else {
-        res.status(200).send("No se encontró la categoría");
+        res.status(200).send('No se encontró la categoría');
       }
     })
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.post("/", (req, res) => {
+ruta.post('/', verificarToken, (req, res) => {
   let body = req.body;
   let resultado = createCategoria(body);
   resultado
@@ -44,7 +45,7 @@ ruta.post("/", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.put("/update/:id", (req, res) => {
+ruta.put('/update/:id', verificarToken, (req, res) => {
   let body = req.body;
   let id = req.params.id;
   let resultado = updateCatId(id, body);
@@ -53,7 +54,7 @@ ruta.put("/update/:id", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.delete("/delete/:id", (req, res) => {
+ruta.delete('/delete/:id', verificarToken, (req, res) => {
   let id = req.params.id;
   let resultado = deleteCatId(id);
   resultado

@@ -1,5 +1,5 @@
-import express from "express";
-import Joi from "joi";
+import express from 'express';
+import Joi from 'joi';
 import {
   getJuegos,
   getJuegoTitulo,
@@ -10,8 +10,8 @@ import {
   createJuego,
   updateJuegoId,
   deleteJuegoId,
-} from "../controllers/juegos_controller.js";
-import verificarToken from "../middlewares/auth.js";
+} from '../controllers/juegos_controller.js';
+import verificarToken from '../middlewares/auth.js';
 
 const ruta = express.Router();
 
@@ -24,7 +24,7 @@ const schemaJuego = Joi.object({
   precio: Joi.number().min(100).max(750000),
 });
 
-ruta.get("/", (req, res) => {
+ruta.get('/', (req, res) => {
   let resultado;
   // busqueda de juegos por titulo
   if (req.query.titulo) {
@@ -51,7 +51,7 @@ ruta.get("/", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.get("/:id", (req, res) => {
+ruta.get('/:id', (req, res) => {
   let id = req.params.id;
   let resultado = getJuegoId(id);
   resultado
@@ -59,13 +59,13 @@ ruta.get("/:id", (req, res) => {
       if (juegos.length) {
         res.status(200).json(juegos);
       } else {
-        res.status(200).send("No se encontró el juego");
+        res.status(200).send('No se encontró el juego');
       }
     })
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.post("/", verificarToken, (req, res) => {
+ruta.post('/', verificarToken, (req, res) => {
   let body = req.body;
 
   const { error, value } = schemaJuego.validate({
@@ -87,7 +87,7 @@ ruta.post("/", verificarToken, (req, res) => {
   }
 });
 
-ruta.put("/update/:id", (req, res) => {
+ruta.put('/update/:id', verificarToken, (req, res) => {
   let body = req.body;
   let id = req.params.id;
   let resultado = updateJuegoId(id, body);
@@ -96,7 +96,7 @@ ruta.put("/update/:id", (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.delete("/delete/:id", verificarToken, (req, res) => {
+ruta.delete('/delete/:id', verificarToken, (req, res) => {
   let id = req.params.id;
   let resultado = deleteJuegoId(id);
   resultado

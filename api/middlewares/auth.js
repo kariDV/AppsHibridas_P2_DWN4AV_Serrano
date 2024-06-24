@@ -6,8 +6,10 @@ let verificarToken = (req, res, next) => {
   jwt.verify(token, process.env.SEED, (error, decoded) => {
     if (error) {
       res.status(400).json('necesitas estar autenticado!');
+      return;
     }
     req.usuario = decoded.usuario;
+
     next();
   });
 };
