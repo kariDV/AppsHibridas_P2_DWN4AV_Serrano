@@ -3,10 +3,11 @@ import {
   getUsuarios,
   createUsuario,
 } from '../controllers/usuarios_controller.js';
+import verificarToken from '../middlewares/auth.js';
 
 const ruta = express.Router();
 
-ruta.get('/', (req, res) => {
+ruta.get('/', verificarToken, (req, res) => {
   let resultado;
   // busqueda de todos los usuarios
   resultado = getUsuarios();

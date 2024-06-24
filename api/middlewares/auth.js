@@ -1,13 +1,15 @@
-import "dotenv/config";
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
-function verificarToken(req, res, next) {
-  if (process.env.TOKEN === req.get("auth")) {
+let verificarToken = (req, res, next) => {
+  let token = req.get('auth');
+  jwt.verify(token, process.env.SEED, (error, decoded) => {
+    if (error) {
+      res.status(400).json('necesitas estar autenticado!');
+    }
+    req.usuario = decoded.usuario;
     next();
-  } else {
-    res
-      .status(400)
-      .send("No se encuentra autorizado para realizar la operación");
-  }
-}
+  });
+};
 
 export default verificarToken;
