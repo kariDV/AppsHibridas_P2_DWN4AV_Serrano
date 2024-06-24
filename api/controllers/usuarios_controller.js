@@ -1,4 +1,5 @@
 import Usuarios from '../models/usuarios_model.js';
+import bcrypt from 'bcrypt';
 
 async function getUsuarios() {
   let usuarios = await Usuarios.find();
@@ -8,7 +9,7 @@ async function getUsuarios() {
 async function createUsuario(body) {
   let nuevoUsuario = new Usuarios({
     email: body.email,
-    password: body.password,
+    password: bcrypt.hashSync(body.password, 10),
   });
 
   return await nuevoUsuario.save();
