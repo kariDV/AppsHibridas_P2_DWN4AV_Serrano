@@ -6,6 +6,11 @@ async function getUsuarios() {
   return usuarios;
 }
 
+async function getUsuarioEmail(body) {
+  let usuario = await Usuarios.findOne({ email: body.email });
+  return usuario;
+}
+
 async function createUsuario(body) {
   let nuevoUsuario = new Usuarios({
     email: body.email,
@@ -15,4 +20,4 @@ async function createUsuario(body) {
   return await nuevoUsuario.save();
 }
 
-export { getUsuarios, createUsuario };
+export { getUsuarios, getUsuarioEmail, createUsuario };
