@@ -16,10 +16,7 @@ ruta.post('/', (req, res) => {
       if (user) {
         const passValida = bcrypt.compareSync(body.password, user.password);
         if (passValida) {
-          // firma --> semilla
-
-          console.log('✅');
-
+          // Contraseña Correcta
           const tokenJwt = jwt.sign(
             {
               usuario: {

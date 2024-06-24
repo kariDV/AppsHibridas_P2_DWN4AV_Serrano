@@ -89,10 +89,12 @@
 ```json
 [
   {
+    "nombre": "Karina",
     "email": "karina@gmail.com",
     "password": "cafecortado123"
   },
   {
+    "nombre": "Ted",
     "email": "tedmosby@gmail.com",
     "password": "terracel0v3"
   }
