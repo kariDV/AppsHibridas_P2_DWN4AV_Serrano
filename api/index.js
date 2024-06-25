@@ -6,6 +6,7 @@ import juegos_routes from './routes/juegos_routes.js';
 import categorias_routes from './routes/categorias_routes.js';
 import usuarios_routes from './routes/usuarios_routes.js';
 import auth from './routes/auth.js';
+import cors from 'cors';
 
 const port = process.env.PORT;
 const mongoDb = process.env.MONGO_URL;
@@ -31,6 +32,9 @@ app.use('/juego', juegos_routes);
 app.use('/categoria', categorias_routes);
 app.use('/usuario', usuarios_routes);
 app.use('/login', auth);
+
+// CORS Policy (Allow all Origins)
+app.use(cors());
 
 app.listen(port, function () {
   console.log('servidor ejecutando...');
