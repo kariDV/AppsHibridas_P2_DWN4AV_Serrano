@@ -3,7 +3,8 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './components/home';
+import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,7 +13,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={Home} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </>
   );
