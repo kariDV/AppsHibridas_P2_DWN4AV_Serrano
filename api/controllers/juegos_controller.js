@@ -7,19 +7,19 @@ async function getJuegos() {
 
 async function getJuegoTitulo(tit) {
   const titFix = tit.replace('-', ' ').replace('_', ' ');
-  let juegoSelec = await Juegos.find({
+  let juegosSelec = await Juegos.find({
     titulo: { $regex: titFix, $options: 'i' },
   });
-  return juegoSelec;
+  return juegosSelec;
 }
 
-async function getJuegoCategoria(cat) {
-  let juegosSelec = await Juegos.find({ idCategoria: cat });
+async function getJuegoCategoria(idCat) {
+  let juegosSelec = await Juegos.find({ idCategoria: idCat });
   return juegosSelec;
 }
 
 async function getJuegosPagina(pagina) {
-  let limite = 2;
+  let limite = 10;
   let juegos = await Juegos.find()
     .skip((pagina - 1) * limite)
     .limit(limite);
@@ -47,34 +47,35 @@ async function getJuegoId(idJuego) {
 
 async function createJuego(body) {
   let nuevoJuego = new Juegos({
-    id: body.id,
+    idJuego: body.idJuego,
     titulo: body.titulo,
     idCategoria: body.idCategoria,
+    descripcion: body.descripcion,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,
-    descripcion: body.descripcion,
   });
   return await nuevoJuego.save();
 }
 
-async function updateJuegoId(id, body) {
+async function updateJuegoId(idJuego, body) {
   let juegoModificado = Juegos.updateOne(
-    { id: id },
+    { idJuego: idJuego },
     {
       $set: {
+        idJuego: body.idJuego,
         titulo: body.titulo,
         idCategoria: body.idCategoria,
+        descripcion: body.descripcion,
         editorial: body.editorial,
         tiempoDeJuego: body.tiempoDeJuego,
-        descripcion: body.descripcion,
       },
     }
   );
   return juegoModificado;
 }
 
-async function deleteJuegoId(id) {
-  let juegoDelete = Juegos.findOneAndDelete({ id: id });
+async function deleteJuegoId(idJuego) {
+  let juegoDelete = Juegos.findOneAndDelete({ idJuego: idJuego });
   return juegoDelete;
 }
 

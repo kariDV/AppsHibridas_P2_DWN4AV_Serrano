@@ -13,7 +13,7 @@ GET /juegos
 Recupera un juego eurogame por id
 
 ```http
-GET /juegos/{id}
+GET /juegos/{idJuego}
 ```
 
 Recupera uno o varios juegos eurogame por titulo del juego que coincidan con el query <br>
@@ -81,11 +81,11 @@ _body (ejemplo)_:
 
 ### Actualización
 
-Actualiza datos de un juego eurogame existente, con el detalle especificado en el body del HTTP Request <br>
+Actualiza datos de un juego eurogame existente, con el detalle especificado en el body del HTTP Request y el id en la URI<br>
 **(requiere autorización mediante token 'auth' en el header)**
 
 ```http
-PUT /juegos/
+PUT /juegos/{idJuego}
 ```
 
 _header (ejemplo)_:

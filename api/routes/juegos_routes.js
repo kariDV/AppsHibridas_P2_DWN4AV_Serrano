@@ -16,12 +16,12 @@ import verificarToken from '../middlewares/auth.js';
 const ruta = express.Router();
 
 const schemaJuego = Joi.object({
-  id: Joi.number().integer().required(),
+  idJuego: Joi.number().integer().required(),
   titulo: Joi.string().min(3).max(30).required(),
-  categoria: Joi.string().min(3).max(15).required(),
+  idCategoria: Joi.number().integer().required(),
+  descripcion: Joi.string().min(3).max(30000).required(),
   editorial: Joi.string().min(3).max(20),
   tiempoDeJuego: Joi.number().integer().min(1).max(240),
-  precio: Joi.number().min(100).max(750000),
 });
 
 ruta.get('/', (req, res) => {
@@ -66,15 +66,16 @@ ruta.get('/:id', (req, res) => {
 });
 
 ruta.post('/', verificarToken, (req, res) => {
+  // ruta.post('/', (req, res) => {
   let body = req.body;
 
   const { error, value } = schemaJuego.validate({
-    id: body.id,
+    idJuego: body.idJuego,
     titulo: body.titulo,
-    categoria: body.categoria,
+    idCategoria: body.idCategoria,
+    descripcion: body.descripcion,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,
-    precio: body.precio,
   });
 
   if (!error) {
@@ -87,18 +88,20 @@ ruta.post('/', verificarToken, (req, res) => {
   }
 });
 
-ruta.put('/update/:id', verificarToken, (req, res) => {
+ruta.put('/:id', verificarToken, (req, res) => {
+  // ruta.put('/:id', (req, res) => {
   let body = req.body;
-  let id = req.params.id;
-  let resultado = updateJuegoId(id, body);
+  let idJuego = req.params.id;
+  let resultado = updateJuegoId(idJuego, body);
   resultado
     .then((juego) => res.status(201).json(juego))
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.delete('/delete/:id', verificarToken, (req, res) => {
-  let id = req.params.id;
-  let resultado = deleteJuegoId(id);
+// ruta.delete('/:id', verificarToken, (req, res) => {
+ruta.delete('/:id', (req, res) => {
+  let idJuego = req.params.id;
+  let resultado = deleteJuegoId(idJuego);
   resultado
     .then((juego) => res.status(201).json(juego))
     .catch((error) => res.status(400).json(error));
