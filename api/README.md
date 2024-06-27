@@ -247,28 +247,30 @@ Recupera todos los usuarios
 **(requiere autorización mediante token 'auth' en el header)**
 
 ```http
-GET /usuarios
+GET /usuarios/
 ```
 
 _header (ejemplo)_:
 
-````json
+```json
 {
   "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
 }
+```
 
 Recupera un usuario por id
 
 ```http
 GET /usuarios/{id}
-````
+```
 
 _header (ejemplo)_:
 
-````json
+```json
 {
   "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
 }
+```
 
 ---
 
@@ -357,4 +359,3 @@ _header (ejemplo)_:
 ```
 
 ---
-````
