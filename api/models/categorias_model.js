@@ -1,12 +1,12 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 // Schema
 const categoriaSchema = new mongoose.Schema({
-  id: {
+  idCategoria: {
     type: Number,
     required: true,
   },
-  categoria: {
+  titulo: {
     type: String,
     required: true,
   },
@@ -16,4 +16,4 @@ const categoriaSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model("categoria", categoriaSchema);
+export default mongoose.model('categoria', categoriaSchema);

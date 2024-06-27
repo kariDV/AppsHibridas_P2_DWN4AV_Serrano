@@ -1,7 +1,7 @@
 import express from 'express';
 import {
   getCategorias,
-  getCategoriaNombre,
+  getCategoriaTitulo,
   getCategoriaId,
   createCategoria,
   updateCatId,
@@ -13,8 +13,8 @@ const ruta = express.Router();
 
 ruta.get('/', (req, res) => {
   let resultado;
-  if (req.query.categoria) {
-    resultado = getCategoriaNombre(req.query.categoria);
+  if (req.query.titulo) {
+    resultado = getCategoriaTitulo(req.query.titulo);
   } else {
     resultado = getCategorias();
   }
@@ -24,12 +24,12 @@ ruta.get('/', (req, res) => {
 });
 
 ruta.get('/:id', (req, res) => {
-  let id = req.params.id;
-  let resultado = getCategoriaId(id);
+  let idCategoria = req.params.id;
+  let resultado = getCategoriaId(idCategoria);
   resultado
-    .then((cat) => {
-      if (cat.length) {
-        res.status(200).json(cat);
+    .then((categoria) => {
+      if (categoria.length) {
+        res.status(200).json(categoria);
       } else {
         res.status(200).send('No se encontró la categoría');
       }
@@ -38,6 +38,7 @@ ruta.get('/:id', (req, res) => {
 });
 
 ruta.post('/', verificarToken, (req, res) => {
+  // ruta.post('/', (req, res) => {
   let body = req.body;
   let resultado = createCategoria(body);
   resultado
@@ -45,18 +46,20 @@ ruta.post('/', verificarToken, (req, res) => {
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.put('/update/:id', verificarToken, (req, res) => {
+ruta.put('/:id', verificarToken, (req, res) => {
+  // ruta.put('/:id', (req, res) => {
   let body = req.body;
-  let id = req.params.id;
-  let resultado = updateCatId(id, body);
+  let idCategoria = req.params.id;
+  let resultado = updateCatId(idCategoria, body);
   resultado
     .then((categoria) => res.status(201).json(categoria))
     .catch((error) => res.status(400).json(error));
 });
 
-ruta.delete('/delete/:id', verificarToken, (req, res) => {
-  let id = req.params.id;
-  let resultado = deleteCatId(id);
+ruta.delete('/:id', verificarToken, (req, res) => {
+  // ruta.delete('/:id', (req, res) => {
+  let idCategoria = req.params.id;
+  let resultado = deleteCatId(idCategoria);
   resultado
     .then((categoria) => res.status(201).json(categoria))
     .catch((error) => res.status(400).json(error));

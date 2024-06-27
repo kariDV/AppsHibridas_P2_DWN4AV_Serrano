@@ -1,35 +1,39 @@
-import Categorias from "../models/categorias_model.js";
+import Categorias from '../models/categorias_model.js';
 
 async function getCategorias() {
   let categoria = await Categorias.find();
   return categoria;
 }
 
-async function getCategoriaNombre(cat) {
-  let categoria = await Categorias.find({ categoria: cat });
+async function getCategoriaTitulo(tit) {
+  const titFix = tit.replace('-', ' ').replace('_', ' ');
+  let categoria = await Categorias.find({
+    titulo: { $regex: titFix, $options: 'i' },
+  });
   return categoria;
 }
 
-async function getCategoriaId(id) {
-  let categoria = await Categorias.find({ id: id });
+async function getCategoriaId(idCategoria) {
+  let categoria = await Categorias.find({ idCategoria: idCategoria });
   return categoria;
 }
 
 async function createCategoria(body) {
   let nuevaCategoria = new Categorias({
-    id: body.id,
-    categoria: body.categoria,
+    idCategoria: body.idCategoria,
+    titulo: body.titulo,
     descripcion: body.descripcion,
   });
   return await nuevaCategoria.save();
 }
 
-async function updateCatId(id, body) {
+async function updateCatId(idCategoria, body) {
   let cateModificada = Categorias.updateOne(
-    { id: id },
+    { idCategoria: idCategoria },
     {
       $set: {
-        categoria: body.categoria,
+        idCategoria: body.idCategoria,
+        titulo: body.titulo,
         descripcion: body.descripcion,
       },
     }
@@ -37,14 +41,14 @@ async function updateCatId(id, body) {
   return cateModificada;
 }
 
-async function deleteCatId(id) {
-  let catDelete = Categorias.findOneAndDelete({ id: id });
+async function deleteCatId(idCategoria) {
+  let catDelete = Categorias.findOneAndDelete({ idCategoria: idCategoria });
   return catDelete;
 }
 
 export {
   getCategorias,
-  getCategoriaNombre,
+  getCategoriaTitulo,
   getCategoriaId,
   createCategoria,
   updateCatId,

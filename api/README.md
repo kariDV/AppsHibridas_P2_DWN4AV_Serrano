@@ -190,11 +190,11 @@ _body (ejemplo)_:
 
 ### Actualización
 
-Actualiza datos de una categoria existente, con el detalle especificado en el body del HTTP Request <br>
+Actualiza datos de una categoria existente, con el detalle especificado en el body del HTTP Request y el id en la URI<br>
 **(requiere autorización mediante token 'auth' en el header)**
 
 ```http
-PUT /categorias/
+PUT /categorias/{idCategoria}
 ```
 
 _header (ejemplo)_:
