@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 // Schema
 const juegoSchema = new mongoose.Schema({
-  id: {
+  idJuego: {
     type: Number,
     required: true,
   },
@@ -10,22 +10,22 @@ const juegoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  categoria: {
+  idCategoria: {
+    type: Number,
+    required: true,
+  },
+  descripcion: {
     type: String,
     required: true,
   },
   editorial: {
     type: String,
-    required: true,
+    required: false,
   },
   tiempoDeJuego: {
     type: Number,
-    required: true,
-  },
-  precio: {
-    type: Number,
-    required: true,
+    required: false,
   },
 });
 
-export default mongoose.model("juego", juegoSchema);
+export default mongoose.model('juego', juegoSchema);

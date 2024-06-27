@@ -31,8 +31,8 @@ ruta.get('/', (req, res) => {
     resultado = getJuegoTitulo(req.query.titulo);
   }
   // busqueda de juegos por categoria
-  else if (req.query.categoria) {
-    resultado = getJuegoCategoria(req.query.categoria);
+  else if (req.query.idCategoria) {
+    resultado = getJuegoCategoria(req.query.idCategoria);
   }
   // busqueda de juegos con paginado
   else if (req.query.pagina) {
@@ -52,8 +52,8 @@ ruta.get('/', (req, res) => {
 });
 
 ruta.get('/:id', (req, res) => {
-  let id = req.params.id;
-  let resultado = getJuegoId(id);
+  let idJuego = req.params.id;
+  let resultado = getJuegoId(idJuego);
   resultado
     .then((juegos) => {
       if (juegos.length) {

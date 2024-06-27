@@ -1,4 +1,4 @@
-import Juegos from "../models/juegos_model.js";
+import Juegos from '../models/juegos_model.js';
 
 async function getJuegos() {
   let juegos = await Juegos.find();
@@ -6,12 +6,15 @@ async function getJuegos() {
 }
 
 async function getJuegoTitulo(tit) {
-  let juegoSelec = await Juegos.find({ titulo: tit });
+  const titFix = tit.replace('-', ' ').replace('_', ' ');
+  let juegoSelec = await Juegos.find({
+    titulo: { $regex: titFix, $options: 'i' },
+  });
   return juegoSelec;
 }
 
 async function getJuegoCategoria(cat) {
-  let juegosSelec = await Juegos.find({ categoria: cat });
+  let juegosSelec = await Juegos.find({ idCategoria: cat });
   return juegosSelec;
 }
 
@@ -37,8 +40,8 @@ async function getJuegosOrden() {
   return juegos;
 }
 
-async function getJuegoId(id) {
-  let juegoSelec = await Juegos.find({ id: id });
+async function getJuegoId(idJuego) {
+  let juegoSelec = await Juegos.find({ idJuego: idJuego });
   return juegoSelec;
 }
 
@@ -46,10 +49,10 @@ async function createJuego(body) {
   let nuevoJuego = new Juegos({
     id: body.id,
     titulo: body.titulo,
-    categoria: body.categoria,
+    idCategoria: body.idCategoria,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,
-    precio: body.precio,
+    descripcion: body.descripcion,
   });
   return await nuevoJuego.save();
 }
@@ -60,10 +63,10 @@ async function updateJuegoId(id, body) {
     {
       $set: {
         titulo: body.titulo,
-        categoria: body.categoria,
+        idCategoria: body.idCategoria,
         editorial: body.editorial,
         tiempoDeJuego: body.tiempoDeJuego,
-        precio: body.precio,
+        descripcion: body.descripcion,
       },
     }
   );

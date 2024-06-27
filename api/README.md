@@ -17,17 +17,16 @@ GET /juegos/{id}
 ```
 
 Recupera uno o varios juegos eurogame por titulo del juego que coincidan con el query <br>
-(los guiones "-" representan espacios)
+(los guiones "-" o "\_" representan espacios | no es case sensitive)
 
 ```http
 GET /juegos/?titulo=love-letter
 ```
 
-Recupera uno o varios juegos eurogame por nombre de categoria que coincidan con el query <br>
-(los guiones "-" representan espacios)
+Recupera uno o varios juegos eurogame que coincidan con el id de categoria <br>
 
 ```http
-GET /juegos/?categoria=estrategia
+GET /juegos/?idCategoria={idCategoria}
 ```
 
 Recupera los juegos de la página especificada <br>
@@ -150,7 +149,7 @@ GET /categorias/{id}
 ```
 
 Recupera una o varias categorias por titulo de categoria que coincidan con el query <br>
-(los guiones "-" representan espacios)
+(los guiones "-" o "\_" representan espacios | no es case sensitive)
 
 ```http
 GET /categorias/?titulo=estrategia

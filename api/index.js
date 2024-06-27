@@ -32,10 +32,10 @@ app.get('/file', (req, res) => {
 });
 
 // routes
-app.use('/juego', juegos_routes);
-app.use('/categoria', categorias_routes);
-app.use('/usuario', usuarios_routes);
-app.use('/login', auth);
+app.use('/api/juegos', juegos_routes);
+app.use('/api/categoria', categorias_routes);
+app.use('/api/usuario', usuarios_routes);
+app.use('/api/login', auth);
 
 app.listen(port, function () {
   console.log('servidor ejecutando...');
