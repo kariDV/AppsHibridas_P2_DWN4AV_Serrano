@@ -359,3 +359,83 @@ _header (ejemplo)_:
 ```
 
 ---
+
+## FAVORITOS
+
+### Consulta
+
+Recupera todos los favoritos de un usuario
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+GET /favoritos/{idUsuario}
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+---
+
+### Alta
+
+Da de alta un nuevo favorito, con el detalle especificado en el body del HTTP Request <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+POST /favoritos/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idUsuario": 1,
+    "idCategoria": 3
+  }
+]
+```
+
+---
+
+### Eliminación
+
+Elimina un favorito <br>
+**IMPORTANTE: solo se podrá actualizar el usuario que esté logueado** <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+DELETE /favoritos/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idUsuario": 1,
+    "idCategoria": 3
+  }
+]
+```
