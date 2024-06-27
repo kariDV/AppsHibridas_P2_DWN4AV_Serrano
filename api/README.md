@@ -18,39 +18,41 @@ Recupera uno o varios juegos eurogame por titulo del juego que coincidan con el 
 (los guiones "-" representan espacios)
 
 ```http
-GET Juegos/?titulo=love-letter
+GET /juegos/?titulo=love-letter
 ```
 
 Recupera uno o varios juegos eurogame por nombre de categoria que coincidan con el query
 (los guiones "-" representan espacios)
 
 ```http
-GET Juegos/?categoria=estrategia
+GET /juegos/?categoria=estrategia
 ```
 
 Recupera los juegos de la página especificada (se separan cada 10)
 
 ```http
-GET Juegos/?pagina=2
+GET /juegos/?pagina=2
 ```
 
 Recupera los juegos ordenados por el criterio especificado (por ahora solo titulo del juego)
 
 ```http
-GET Juegos/?ordenado=titulo
+GET /juegos/?ordenado=titulo
 ```
 
 Da de alta un nuevo juego eurogame, con el detalle especificado en el body del HTTP Request
 (requiere autorización mediante token 'auth' en el header)
 
 ```http
-POST Juegos/
+POST /juegos/
 ```
 
 _header (ejemplo)_:
 
 ```json
-auth: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
 ```
 
 _body (ejemplo)_:
