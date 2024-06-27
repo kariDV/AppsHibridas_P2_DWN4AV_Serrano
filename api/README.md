@@ -131,6 +131,8 @@ _header (ejemplo)_:
 }
 ```
 
+---
+
 ## CATEGORIAS
 
 ### Consulta
@@ -220,7 +222,7 @@ _body (ejemplo)_:
 
 ### Eliminación
 
-Elimina un juego eurogame existente especificado por id <br>
+Elimina una categoría especificada por id <br>
 **(requiere autorización mediante token 'auth' en el header)**
 
 ```http
@@ -234,3 +236,125 @@ _header (ejemplo)_:
   "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
 }
 ```
+
+---
+
+## USUARIOS
+
+### Consulta
+
+Recupera todos los usuarios
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+GET /usuarios
+```
+
+_header (ejemplo)_:
+
+````json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+
+Recupera un usuario por id
+
+```http
+GET /usuarios/{id}
+````
+
+_header (ejemplo)_:
+
+````json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+
+---
+
+### Alta
+
+Da de alta un nuevo usuario, con el detalle especificado en el body del HTTP Request <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+POST /usuarios/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idUsuario": 1,
+    "email": "karina@gmail.com",
+    "contraseña": "$kari1234",
+    "alias": "Karina Serrano"
+  }
+]
+```
+
+---
+
+### Actualización
+
+Actualiza datos de un usuario existente, con el detalle especificado en el body del HTTP Request <br>
+**IMPORTANTE: solo se podrá actualizar el usuario que esté logueado** <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+PUT /usuarios/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idUsuario": 1,
+    "email": "karina@google.com",
+    "contraseña": "$kari5678",
+    "alias": "Karina Guadalupe Serrano"
+  }
+]
+```
+
+---
+
+### Eliminación
+
+Elimina un usuario especificado por id <br>
+**IMPORTANTE: solo se podrá actualizar el usuario que esté logueado** <br>
+**una vez eliminado se vence la sesión** <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+DELETE /usuarios/{id}
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+---
+````
