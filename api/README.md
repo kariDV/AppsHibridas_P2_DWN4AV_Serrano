@@ -394,7 +394,7 @@ _body (ejemplo)_:
 [
   {
     "idUsuario": 1,
-    "idCategoria": 3
+    "idJuego": 3
   }
 ]
 ```
@@ -425,7 +425,7 @@ _body (ejemplo)_:
 [
   {
     "idUsuario": 1,
-    "idCategoria": 3
+    "idJuego": 3
   }
 ]
 ```

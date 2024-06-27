@@ -32,6 +32,7 @@ ruta.post('/', (req, res) => {
           res.status(200).json({
             usuario: {
               _id: usuario._id,
+              idUsuario: usuario.idUsuario,
               email: usuario.email,
             },
             tokenJwt,

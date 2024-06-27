@@ -2,10 +2,11 @@ import express from 'express';
 import path from 'path';
 import mongoose from 'mongoose';
 import 'dotenv/config';
+import auth from './routes/auth.js';
 import juegos_routes from './routes/juegos_routes.js';
 import categorias_routes from './routes/categorias_routes.js';
 import usuarios_routes from './routes/usuarios_routes.js';
-import auth from './routes/auth.js';
+import favoritos_routes from './routes/favoritos_routes.js';
 import cors from 'cors';
 
 // mongoDB
@@ -32,10 +33,11 @@ app.get('/file', (req, res) => {
 });
 
 // routes
+app.use('/api/login', auth);
 app.use('/api/juegos', juegos_routes);
 app.use('/api/categorias', categorias_routes);
 app.use('/api/usuarios', usuarios_routes);
-app.use('/api/login', auth);
+app.use('/api/favoritos', favoritos_routes);
 
 app.listen(port, function () {
   console.log('servidor ejecutando...');

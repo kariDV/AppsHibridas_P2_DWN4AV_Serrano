@@ -5,6 +5,7 @@ const juegoSchema = new mongoose.Schema({
   idJuego: {
     type: Number,
     required: true,
+    unique: true,
   },
   titulo: {
     type: String,

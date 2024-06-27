@@ -5,6 +5,7 @@ const categoriaSchema = new mongoose.Schema({
   idCategoria: {
     type: Number,
     required: true,
+    unique: true,
   },
   titulo: {
     type: String,
