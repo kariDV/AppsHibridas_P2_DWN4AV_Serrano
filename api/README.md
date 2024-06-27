@@ -120,7 +120,111 @@ Elimina un juego eurogame existente especificado por id <br>
 **(requiere autorización mediante token 'auth' en el header)**
 
 ```http
-DELETE /juegos/
+DELETE /juegos/{id}
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+## CATEGORIAS
+
+### Consulta
+
+Recupera todas las categorias
+
+```http
+GET /categorias
+```
+
+Recupera una categoria por id
+
+```http
+GET /categorias/{id}
+```
+
+Recupera una o varias categorias por titulo de categoria que coincidan con el query <br>
+(los guiones "-" representan espacios)
+
+```http
+GET /categorias/?titulo=estrategia
+```
+
+---
+
+### Alta
+
+Da de alta una nueva categoría, con el detalle especificado en el body del HTTP Request <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+POST /categorias/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idCategoria": 1,
+    "titulo": "Estrategia",
+    "descripcion": "Los juegos de mesa de estrategia se centran en la planificación táctica y la toma de decisiones estratégicas para alcanzar objetivos específicos dentro de un contexto temático o competitivo."
+  }
+]
+```
+
+---
+
+### Actualización
+
+Actualiza datos de una categoria existente, con el detalle especificado en el body del HTTP Request <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+PUT /categorias/
+```
+
+_header (ejemplo)_:
+
+```json
+{
+  "auth": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7Il9pZCI6IjY2NzliZGIzYWYzODcwODJmZjg5MmJhMCIsImVtYWlsIjoia2FyaW5hQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MTkyNTk1NDAsImV4cCI6MTcxOTI2MDE0MH0.HC5j33XWzavSXX_yZCxS0rgs7ajah4zT2z5yWZNsGf4"
+}
+```
+
+_body (ejemplo)_:
+
+```json
+[
+  {
+    "idCategoria": 7,
+    "titulo": "Party",
+    "descripcion": "Los juegos de mesa party se enfocan en la diversión y la interacción social rápida entre los jugadores, a menudo incluyendo actividades lúdicas, trivia, o desafíos creativos que promueven el entretenimiento grupal."
+  }
+]
+```
+
+---
+
+### Eliminación
+
+Elimina un juego eurogame existente especificado por id <br>
+**(requiere autorización mediante token 'auth' en el header)**
+
+```http
+DELETE /categorias/{id}
 ```
 
 _header (ejemplo)_:
