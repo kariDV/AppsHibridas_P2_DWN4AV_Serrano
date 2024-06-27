@@ -47,7 +47,7 @@ GET /juegos/?ordenado=titulo
 ### Alta
 
 Da de alta un nuevo juego eurogame, con el detalle especificado en el body del HTTP Request <br>
-_(requiere autorización mediante token 'auth' en el header)_
+**(requiere autorización mediante token 'auth' en el header)**
 
 ```http
 POST /juegos/
@@ -79,7 +79,7 @@ _body (ejemplo)_:
 ### Actualización
 
 Actualiza datos de un juego eurogame existente, con el detalle especificado en el body del HTTP Request <br>
-_(requiere autorización mediante token 'auth' en el header)_
+**(requiere autorización mediante token 'auth' en el header)**
 
 ```http
 PUT /juegos/
@@ -111,7 +111,7 @@ _body (ejemplo)_:
 ### Eliminación
 
 Elimina un juego eurogame existente especificado por id <br>
-_(requiere autorización mediante token 'auth' en el header)_
+**(requiere autorización mediante token 'auth' en el header)**
 
 ```http
 DELETE /juegos/
