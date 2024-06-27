@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 // Schema
 const UsuarioSchema = new mongoose.Schema({
-  nombre: {
-    type: String,
+  idUsuario: {
+    type: Number,
     required: true,
   },
   email: {
@@ -11,6 +11,10 @@ const UsuarioSchema = new mongoose.Schema({
     required: true,
   },
   password: {
+    type: String,
+    required: true,
+  },
+  alias: {
     type: String,
     required: true,
   },

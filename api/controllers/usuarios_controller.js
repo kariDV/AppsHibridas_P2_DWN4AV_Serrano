@@ -6,6 +6,11 @@ async function getUsuarios() {
   return usuarios;
 }
 
+async function getUsuarioId(idUsuario) {
+  let usuarios = await Usuarios.find({ idUsuario: idUsuario });
+  return usuarios;
+}
+
 async function getUsuarioEmail(body) {
   let usuario = await Usuarios.findOne({ email: body.email });
   return usuario;
@@ -13,12 +18,40 @@ async function getUsuarioEmail(body) {
 
 async function createUsuario(body) {
   let nuevoUsuario = new Usuarios({
-    nombre: body.nombre,
+    idUsuario: body.idUsuario,
     email: body.email,
     password: bcrypt.hashSync(body.password, 10),
+    alias: body.alias,
   });
 
   return await nuevoUsuario.save();
 }
 
-export { getUsuarios, getUsuarioEmail, createUsuario };
+async function updateUsuario(idUsuario, body) {
+  let updatedUsuario = Usuarios.updateOne(
+    { idUsuario: idUsuario },
+    {
+      $set: {
+        idUsuario: body.idUsuario,
+        email: body.email,
+        password: bcrypt.hashSync(body.password, 10),
+        alias: body.alias,
+      },
+    }
+  );
+  return updatedUsuario;
+}
+
+async function deleteUsuario(idUsuario) {
+  let usuarioDelete = Usuarios.findOneAndDelete({ idUsuario: idUsuario });
+  return usuarioDelete;
+}
+
+export {
+  getUsuarios,
+  getUsuarioId,
+  getUsuarioEmail,
+  createUsuario,
+  updateUsuario,
+  deleteUsuario,
+};

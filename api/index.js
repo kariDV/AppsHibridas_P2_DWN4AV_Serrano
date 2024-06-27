@@ -34,7 +34,7 @@ app.get('/file', (req, res) => {
 // routes
 app.use('/api/juegos', juegos_routes);
 app.use('/api/categorias', categorias_routes);
-app.use('/api/usuario', usuarios_routes);
+app.use('/api/usuarios', usuarios_routes);
 app.use('/api/login', auth);
 
 app.listen(port, function () {

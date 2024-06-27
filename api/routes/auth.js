@@ -12,16 +12,17 @@ ruta.post('/', (req, res) => {
 
   let usuarioRecuperado = getUsuarioEmail(body);
   usuarioRecuperado
-    .then((user) => {
-      if (user) {
-        const passValida = bcrypt.compareSync(body.password, user.password);
+    .then((usuario) => {
+      if (usuario) {
+        const passValida = bcrypt.compareSync(body.password, usuario.password);
+        // Contraseña Correcta
         if (passValida) {
-          // Contraseña Correcta
+          // Genera Token
           const tokenJwt = jwt.sign(
             {
               usuario: {
-                _id: user._id,
-                email: user.email,
+                _id: usuario._id,
+                email: usuario.email,
               },
             },
             process.env.SEED,
@@ -30,8 +31,8 @@ ruta.post('/', (req, res) => {
 
           res.status(200).json({
             usuario: {
-              _id: user._id,
-              email: user.email,
+              _id: usuario._id,
+              email: usuario.email,
             },
             tokenJwt,
           });
