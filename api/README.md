@@ -16,27 +16,29 @@ Recupera un juego eurogame por id
 GET /juegos/{id}
 ```
 
-Recupera uno o varios juegos eurogame por titulo del juego que coincidan con el query
+Recupera uno o varios juegos eurogame por titulo del juego que coincidan con el query <br>
 (los guiones "-" representan espacios)
 
 ```http
 GET /juegos/?titulo=love-letter
 ```
 
-Recupera uno o varios juegos eurogame por nombre de categoria que coincidan con el query
+Recupera uno o varios juegos eurogame por nombre de categoria que coincidan con el query <br>
 (los guiones "-" representan espacios)
 
 ```http
 GET /juegos/?categoria=estrategia
 ```
 
-Recupera los juegos de la página especificada (se separan cada 10)
+Recupera los juegos de la página especificada <br>
+(se separan cada 10)
 
 ```http
 GET /juegos/?pagina=2
 ```
 
-Recupera los juegos ordenados por el criterio especificado (por ahora solo titulo del juego)
+Recupera los juegos ordenados por el criterio especificado <br>
+(por ahora solo titulo del juego)
 
 ```http
 GET /juegos/?ordenado=titulo
@@ -44,7 +46,7 @@ GET /juegos/?ordenado=titulo
 
 ### Alta
 
-Da de alta un nuevo juego eurogame, con el detalle especificado en el body del HTTP Request
+Da de alta un nuevo juego eurogame, con el detalle especificado en el body del HTTP Request <br>
 (requiere autorización mediante token 'auth' en el header)
 
 ```http
