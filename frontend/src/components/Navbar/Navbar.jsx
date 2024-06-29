@@ -3,22 +3,6 @@ import { NavLink } from 'react-router-dom';
 import favoritoSvg from '../../assets/img/favorito.svg';
 import logoSvg from '../../assets/img/logo.svg';
 
-// const Navbar = () => {
-//   return (
-//     <header>
-//       <h3>Hola Usuario...</h3>
-//       <nav>
-//         <ul>
-//           <li>
-//             <NavLink to="/">Home</NavLink>
-//             <NavLink to="/logout">Logout</NavLink>
-//           </li>
-//         </ul>
-//       </nav>
-//     </header>
-//   );
-// };
-
 const Navbar = () => {
   return (
     <header>
@@ -42,7 +26,7 @@ const Navbar = () => {
                           width="20"
                           height="20"
                           fill="currentColor"
-                          class="bi bi-bookmark-plus-fill"
+                          className="bi bi-bookmark-plus-fill"
                           viewBox="0 0 16 16"
                         >
                           <path
@@ -87,14 +71,14 @@ const Navbar = () => {
                   </li>
                 </ul>
 
-                <a href="#doc" class="btn btn-nav-user">
+                <NavLink to="/Login" className="btn btn-nav-user">
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="bi bi-person-circle me-1"
+                      className="bi bi-person-circle me-1"
                       viewBox="0 0 16 16"
                     >
                       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
@@ -105,7 +89,7 @@ const Navbar = () => {
                     </svg>
                   </span>
                   Log In
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

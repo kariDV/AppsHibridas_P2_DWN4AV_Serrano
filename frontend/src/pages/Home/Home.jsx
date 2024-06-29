@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import portadaPng from '../../assets/img/portada.png';
 
 const Home = () => {
   const [user, setUsers] = useState([]);
   const [loading, setLoading] = useState([]);
-
-  // useEffect(() => {
-  //   setLoading(true);
-  //   axios
-  //     .get('http://localhost:3000/usuario')
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
 
   return (
     <main>
@@ -36,7 +27,9 @@ const Home = () => {
             </div>
 
             <div class="pt-4">
-              <button class="btn-action">Registrarme</button>
+              <NavLink className="btn-action" to="/Register">
+                Registrarme
+              </NavLink>
             </div>
           </div>
           <div class="col-5">

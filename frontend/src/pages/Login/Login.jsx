@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import loginImgPng from '../../assets/img/login-img.png';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
   const [user, setUsers] = useState([]);
@@ -34,7 +35,7 @@ const Login = () => {
         </form>
         <span>
           ¿No tienes una cuenta? Puedes{' '}
-          <a href="/register.html">Registrarte aquí</a>
+          <NavLink to="/Register">Registrarte aquí</NavLink>
         </span>
       </div>
     </main>
