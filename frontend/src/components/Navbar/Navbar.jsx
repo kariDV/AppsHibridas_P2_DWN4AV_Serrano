@@ -26,16 +26,16 @@ const Navbar = () => {
         <nav class="navbar navbar-expand-lg bg-nav">
           <div class="container-fluid">
             <div>
-              <a class="navbar-brand logo-nav" href="#">
+              <NavLink className="navbar-brand logo-nav" to="/">
                 <img src={logoSvg} alt="Logo" />
-              </a>
+              </NavLink>
             </div>
 
             <div>
               <div class="m-2 d-flex">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a href="" class="btn link-nav-user">
+                    <NavLink to="/Subir" className="btn link-nav-user">
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@ const Navbar = () => {
                         </svg>
                       </span>
                       Subir
-                    </a>
+                    </NavLink>
                   </li>
 
                   <li class="nav-item">
@@ -73,14 +73,17 @@ const Navbar = () => {
 
                 <ul class="navbar-nav">
                   <li>
-                    <a href="" class="nav-item  btn text-nav-link">
+                    <NavLink to="/" className="nav-item btn text-nav-link">
                       Home
-                    </a>
+                    </NavLink>
                   </li>
                   <li>
-                    <a href="" class="nav-item  btn text-nav-link">
+                    <NavLink
+                      to="/Coleccion"
+                      className="nav-item btn text-nav-link"
+                    >
                       Colección
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
 
