@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home';
+import { Home } from './pages';
 
 function App() {
   const [count, setCount] = useState(0);
