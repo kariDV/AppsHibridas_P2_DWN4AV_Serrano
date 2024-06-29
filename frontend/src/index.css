@@ -1,4 +1,4 @@
-:root {
+body/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,416 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+/* User CSS */
+
+/* --------------------------General------------------------------ */
+/* --------------------------------------------------------------- */
+/* -------------------Fonts---------------------- */
+.fuente1 {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;
+  color: #c17e09;
+  filter: drop-shadow(0 0px 20px rgb(15, 0, 15));
+  font-size: 3.3rem;
+}
+
+.fuente2 {
+  font-family: 'Josefin Slab', serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #90628c;
+}
+
+.fuente3 {
+  font-weight: 800;
+  color: rgb(125, 120, 23);
+  filter: drop-shadow(0 0px 2px rgb(44, 42, 3));
+}
+
+.fuente4 {
+  color: rgb(229, 210, 185);
+  font-weight: 800;
+}
+
+.fuente5 {
+  font-family: 'Josefin Slab', serif;
+  color: rgb(229, 210, 185);
+  font-weight: 800;
+  font-size: 2.7rem;
+}
+
+.text-bg-secondary {
+  color: rgb(16, 16, 22) !important;
+  font-size: 1.1rem;
+}
+
+/* ---------------spacing----------------- */
+
+p {
+  margin: 0;
+}
+
+.padding-t {
+  padding-top: 10rem;
+}
+
+.padding-b {
+  padding-bottom: 5rem;
+}
+
+.padding-tb {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
+.padding-carousel {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+}
+
+.padding-search {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.espacio-text {
+  margin-inline: 7px;
+}
+
+.card-doc {
+  color: antiquewhite;
+  padding: 5rem;
+}
+
+.margin-doc {
+  margin: 0rem 0rem 3rem 0rem;
+}
+
+.margin-nav {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+.link-doc {
+  color: #d39bce6d;
+}
+
+/* -------------------Header---------------------- */
+
+/* ---------------Nav------------------- */
+
+.bg-nav {
+  background: linear-gradient(0deg, rgb(33, 24, 33) 30%, rgb(30, 30, 36) 70%);
+  padding: 1rem 0rem 1rem 0rem;
+  box-shadow: 5px 3px 10px rgba(24, 11, 1, 0.579),
+    inset 0px -2px 15px rgba(116, 93, 11, 0.399);
+}
+
+.logo-nav {
+  color: #785275;
+  filter: drop-shadow(0 0px 7px rgb(86, 72, 120));
+  font-size: 1.7rem;
+}
+
+.text-nav-link {
+  color: rgb(213, 200, 182);
+  transition: 1s;
+}
+
+/* .navbar-api:hover {
+  color: antiquewhite;
+} */
+
+.text-nav-link:hover {
+  color: rgb(189, 189, 232);
+  filter: drop-shadow(0 2px 20px rgba(255, 255, 255, 0.582));
+  transition: 1s;
+}
+.link-nav-user {
+  color: rgb(222, 144, 42);
+}
+
+.btn-nav-user {
+  border: 2px solid rgb(222, 144, 42);
+  color: rgb(222, 144, 42);
+  /* filter: drop-shadow(0 0px 7px rgba(220, 49, 226, 0.54)); */
+  font-weight: bold;
+  border-radius: 12px;
+  transition: 1s;
+}
+
+.btn-nav:hover {
+  border: 2px solid #d39bce;
+  color: #d39bce;
+  filter: drop-shadow(0 0px 20px rgba(255, 255, 255, 0.952));
+  transition: 1s;
+}
+
+.logo-t {
+  width: 1.7rem;
+}
+
+.separador {
+  font-size: 2rem;
+  font-weight: lighter;
+  color: #6a4068;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.952));
+}
+
+/*--------------------body------------------- */
+
+/* --------------------------Portada------------------------------ */
+/* --------------------------------------------------------------- */
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 2.1rem;
+  background: linear-gradient(
+    90deg,
+    rgb(31, 18, 30) 0%,
+    rgb(25, 25, 32) 15%,
+    rgba(47, 39, 10, 1) 35%,
+    rgba(52, 43, 11, 1) 50%,
+    rgba(47, 39, 10, 1) 65%,
+    rgb(21, 21, 27) 85%,
+    rgba(25, 14, 24, 1) 100%
+  );
+  color: antiquewhite;
+}
+
+.img-portada {
+  filter: drop-shadow(0 0px 50px rgba(181, 65, 213, 0.41));
+  width: 120%;
+  padding-top: 3rem;
+}
+
+/* BTN */
+.btn-action {
+  background: linear-gradient(
+    90deg,
+    rgba(217, 139, 6, 1) 50%,
+    rgba(217, 159, 6, 1) 80%,
+    rgba(208, 170, 3, 1) 100%
+  );
+  filter: drop-shadow(0 0px 20px rgba(181, 65, 213, 0.41));
+  color: rgba(234, 231, 231, 0.958);
+  font-weight: bold;
+  transition: 0.3s ease;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem;
+  width: 25rem;
+}
+
+.btn-secondary:hover {
+  filter: drop-shadow(0 3px 7px rgba(210, 194, 68, 0.452));
+}
+/* --------------------------Libreria----------------------------- */
+/* --------------------------------------------------------------- */
+
+/* --------------  bar search  ------------------- */
+
+.position-1 {
+  position: relative;
+}
+
+.position-2 {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+}
+
+.color-style {
+  color: #ffa100;
+}
+
+/* --------------  btn search  ------------------- */
+
+.btn-secondary {
+  background: linear-gradient(
+    90deg,
+    rgba(217, 139, 6, 1) 50%,
+    rgba(217, 159, 6, 1) 80%,
+    rgba(208, 170, 3, 1) 100%
+  );
+  /* filter: drop-shadow(0px -1px 5px rgba(169, 143, 97, 0.315)); */
+  color: rgba(234, 231, 231, 0.958);
+  font-weight: bold;
+  transition: 0.3s ease;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem;
+  width: 9rem;
+}
+
+.btn-secondary:hover {
+  filter: drop-shadow(0 3px 7px rgba(210, 194, 68, 0.452));
+}
+
+.form-search-style {
+  border-radius: 25px 25px 25px 25px;
+  background: rgb(244, 238, 228);
+  filter: drop-shadow(0px -1px 5px rgba(196, 164, 107, 0.7));
+  padding: 0.8rem 2rem 0.8rem 4rem;
+}
+
+/* -----------------carousel---------------------*/
+.bg-carousel {
+  background: #c17e09;
+}
+
+/* -----------------box juegos-------------------- */
+.box-juegos {
+  padding: 1rem;
+  background: linear-gradient(
+    90deg,
+    rgba(236, 168, 10, 0.159) 10%,
+    rgba(126, 99, 74, 0.699) 80%,
+    rgba(93, 95, 95, 0.412) 100%
+  );
+  box-shadow: 0px 0px 20px 15px rgba(113, 60, 121, 0.204),
+    inset 10px 10px 89px -50px rgba(192, 135, 5, 0.889);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(300px);
+  filter: drop-shadow(0 5px 20px rgba(28, 13, 1, 0.382));
+  border-radius: 30px 30px 30px 30px;
+  border: 1px solid rgba(183, 140, 20, 0.289);
+}
+
+/* -----------------------------Login----------------------------- */
+/* --------------------------------------------------------------- */
+
+.title-login {
+  color: rgb(126, 126, 166);
+  filter: drop-shadow(0 2px 10px rgba(32, 19, 0, 0.936));
+  font-size: 2.3rem;
+}
+
+.container-form {
+  width: 40rem;
+}
+
+.form-control {
+  border: 2px solid rgb(133, 77, 5);
+  filter: drop-shadow(0 1px 7px rgba(227, 150, 8, 0.638));
+  border-radius: 12px;
+  background: rgb(245, 239, 233);
+}
+
+.img-login {
+  filter: drop-shadow(0 3px 20px rgba(98, 89, 108, 0.899));
+  width: 20rem;
+}
+
+.is-invalid {
+  --bs-form-invalid-border-color: #ed04d9;
+  border: 3px solid;
+  filter: drop-shadow(0 2px 5px rgba(172, 3, 141, 0.815));
+  /* background-image: url(); */
+}
+
+.is-valid {
+  --bs-form-valid-border-color: #0bc1c8;
+  border: 3px solid;
+  filter: drop-shadow(0 2px 5px rgba(15, 195, 215, 0.44));
+  /* background-image: url(); */
+}
+
+/* -----------------------------Register--------------------------- */
+/* --------------------------------------------------------------- */
+
+.title-login-register {
+  color: rgb(126, 126, 166);
+  filter: drop-shadow(0 2px 10px rgba(32, 19, 0, 0.936));
+  font-size: 2.2rem;
+}
+
+.container-form-register {
+  width: 70rem;
+}
+
+.form-control {
+  border: 2px solid rgb(133, 77, 5);
+  filter: drop-shadow(0 1px 7px rgba(227, 150, 8, 0.638));
+  border-radius: 12px;
+  background: rgb(245, 239, 233);
+}
+
+.img-login {
+  filter: drop-shadow(0 3px 20px rgba(98, 89, 108, 0.899));
+  width: 20rem;
+}
+
+.is-invalid {
+  --bs-form-invalid-border-color: #ed04d9;
+  border: 3px solid;
+  filter: drop-shadow(0 2px 5px rgba(172, 3, 141, 0.815));
+  /* background-image: url(); */
+}
+
+.is-valid {
+  --bs-form-valid-border-color: #0bc1c8;
+  border: 3px solid;
+  filter: drop-shadow(0 2px 5px rgba(15, 195, 215, 0.44));
+  /* background-image: url(); */
+}
+
+.info-register {
+  font-size: 0.9rem;
+  color: #c17e09;
+}
+
+/* ---------------------- Subir eurogame ------------------------- */
+/* -----------------box-------------------- */
+.box-subir {
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  background: linear-gradient(
+    90deg,
+    rgba(236, 168, 10, 0.159) 10%,
+    rgba(126, 99, 74, 0.699) 80%,
+    rgba(93, 95, 95, 0.412) 100%
+  );
+  box-shadow: 0px 0px 20px 15px rgba(113, 60, 121, 0.204),
+    inset 10px 10px 89px -50px rgba(192, 135, 5, 0.889);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(300px);
+  filter: drop-shadow(0 5px 20px rgba(28, 13, 1, 0.382));
+  border-radius: 30px 30px 30px 30px;
+  border: 1px solid rgba(183, 140, 20, 0.289);
+}
+
+/* ------------------Footer------------------ */
+
+.footer {
+  margin-top: 15rem;
+  padding: 3rem 0rem 5rem 0rem;
+  color: antiquewhite;
+  background: linear-gradient(
+    90deg,
+    rgb(70, 27, 67) 0%,
+    rgb(39, 39, 52) 15%,
+    rgb(62, 52, 13) 35%,
+    rgb(79, 55, 5) 50%,
+    rgb(62, 52, 13) 65%,
+    rgb(39, 39, 52) 85%,
+    rgb(70, 27, 67) 100%
+  );
+  box-shadow: 5px 3px 10px rgba(24, 11, 1, 0.881),
+    inset 0px 0px 15px rgba(116, 93, 11, 0.399);
+  /* filter: drop-shadow(0 -1px 7px rgba(13, 2, 50, 0.193)); */
+}
+
+/* ---------------Scrollbar----------------- */
+
+body::-webkit-scrollbar {
+  width: 22px;
+  background: rgb(42, 26, 40);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(48, 48, 67);
+  box-shadow: inset -5px 0px 5px rgb(66, 66, 90);
+  border-radius: 7px;
 }
