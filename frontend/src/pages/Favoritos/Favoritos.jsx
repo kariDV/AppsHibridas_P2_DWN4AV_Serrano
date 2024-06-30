@@ -13,35 +13,35 @@ const Favoritos = () => {
 
   return (
     <main>
-      <h1 class="title-login-register text-center padding-title">
+      <h1 className="title-login-register text-center padding-title">
         <FontAwesomeIcon icon={faHeart} className="fa-sm"></FontAwesomeIcon> Mi
         lista de Eurogames favoritos
       </h1>
 
-      <div class="container">
+      <div className="container">
         <ol>
-          <li class="mb-5">
-            <div class="box-juegos d-flex justify-content-start">
-              <h2 class="col-3 fuente6 d-flex justify-content-start align-items-center">
+          <li className="mb-5">
+            <div className="box-juegos d-flex justify-content-start">
+              <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
                 Love Letter
               </h2>
-              <div class="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span class="title-info">Categoría</span>
-                <p class="">Party</p>
+              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
+                <span className="title-info">Categoría</span>
+                <p className="">Party</p>
               </div>
-              <div class="col-1 d-flex flex-column">
-                <div class="mb-2">
-                  <span class="title-info">Editorial</span>
-                  <p class="">Devir</p>
+              <div className="col-1 d-flex flex-column">
+                <div className="mb-2">
+                  <span className="title-info">Editorial</span>
+                  <p className="">Devir</p>
                 </div>
                 <div>
-                  <span class="title-info">Tiempo</span>
-                  <p class="">30' a 45'</p>
+                  <span className="title-info">Tiempo</span>
+                  <p className="">30' a 45'</p>
                 </div>
               </div>
-              <div class="col-6 d-flex flex-column">
-                <span class="title-info">Descripción</span>
-                <p class="">
+              <div className="col-6 d-flex flex-column">
+                <span className="title-info">Descripción</span>
+                <p className="">
                   Love Letter es un juego de cartas estratégico y rápido para 2
                   a 4 jugadores. Los jugadores intentan entregar su carta de
                   amor a la princesa mientras eliminan a sus oponentes usando
@@ -49,35 +49,35 @@ const Favoritos = () => {
                   la carta de mayor valor al final de la ronda.
                 </p>
               </div>
-              <div class="col-1 d-flex flex-column justify-content-center align-items-end">
-                <span class="title-info-alta">Subido por :</span>
-                <p class="text-center user-alta">Elfa del Bosque</p>
+              <div className="col-1 d-flex flex-column justify-content-center align-items-end">
+                <span className="title-info-alta">Subido por :</span>
+                <p className="text-center user-alta">Elfa del Bosque</p>
               </div>
             </div>
           </li>
 
-          <li class="mb-5">
-            <div class="box-juegos d-flex justify-content-start">
-              <h2 class="col-3 fuente6 d-flex justify-content-start align-items-center">
+          <li className="mb-5">
+            <div className="box-juegos d-flex justify-content-start">
+              <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
                 Love Letter
               </h2>
-              <div class="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span class="title-info">Categoría</span>
-                <p class="">Party</p>
+              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
+                <span className="title-info">Categoría</span>
+                <p className="">Party</p>
               </div>
-              <div class="col-1 d-flex flex-column">
-                <div class="mb-2">
-                  <span class="title-info">Editorial</span>
-                  <p class="">Devir</p>
+              <div className="col-1 d-flex flex-column">
+                <div className="mb-2">
+                  <span className="title-info">Editorial</span>
+                  <p className="">Devir</p>
                 </div>
                 <div>
-                  <span class="title-info">Tiempo</span>
-                  <p class="">30' a 45'</p>
+                  <span className="title-info">Tiempo</span>
+                  <p className="">30' a 45'</p>
                 </div>
               </div>
-              <div class="col-6 d-flex flex-column">
-                <span class="title-info">Descripción</span>
-                <p class="">
+              <div className="col-6 d-flex flex-column">
+                <span className="title-info">Descripción</span>
+                <p className="">
                   Love Letter es un juego de cartas estratégico y rápido para 2
                   a 4 jugadores. Los jugadores intentan entregar su carta de
                   amor a la princesa mientras eliminan a sus oponentes usando
@@ -85,19 +85,19 @@ const Favoritos = () => {
                   la carta de mayor valor al final de la ronda.
                 </p>
               </div>
-              <div class="col-1 d-flex flex-column justify-content-center align-items-end">
-                <span class="title-info-alta">Subido por :</span>
-                <p class="text-center user-alta">Elfa del Bosque</p>
+              <div className="col-1 d-flex flex-column justify-content-center align-items-end">
+                <span className="title-info-alta">Subido por :</span>
+                <p className="text-center user-alta">Elfa del Bosque</p>
               </div>
             </div>
           </li>
         </ol>
 
-        <div class="d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center mt-5">
           <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-end">
-              <li class="page-item">
-                <a class="page-link">
+            <ul className="pagination justify-content-end">
+              <li className="page-item">
+                <a className="page-link">
                   <FontAwesomeIcon
                     icon={faCircleChevronLeft}
                     className="fa-2xl me-2"
@@ -105,23 +105,23 @@ const Favoritos = () => {
                   Anterior
                 </a>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <a className="page-link" href="#">
                   1
                 </a>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <a className="page-link" href="#">
                   2
                 </a>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <a className="page-link" href="#">
                   3
                 </a>
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">
+              <li className="page-item">
+                <a className="page-link" href="#">
                   Siguiente
                   <FontAwesomeIcon
                     icon={faCircleChevronRight}

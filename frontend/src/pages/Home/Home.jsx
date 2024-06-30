@@ -9,15 +9,15 @@ const Home = () => {
 
   return (
     <main>
-      <div class="container padding-tb">
-        <div class="d-flex row align-items-center">
-          <div class="col-7">
-            <h1 class="text-start fuente1 pb-3">
+      <div className="container padding-tb">
+        <div className="d-flex row align-items-center">
+          <div className="col-7">
+            <h1 className="text-start fuente1 pb-3">
               Unite a la comunidad de
-              <span class="d-block mt-2 fuente4">Board Kingdom</span>
+              <span className="d-block mt-2 fuente4">Board Kingdom</span>
             </h1>
 
-            <div class="w-75">
+            <div className="w-75">
               <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut
                 commodi atque cum repudiandae dolorum reiciendis similique quod
@@ -26,14 +26,18 @@ const Home = () => {
               </p>
             </div>
 
-            <div class="pt-4">
+            <div className="pt-4">
               <NavLink className="btn-action" to="/Register">
                 Registrarme
               </NavLink>
             </div>
           </div>
-          <div class="col-5">
-            <img src={portadaPng} class="img-fluid img-portada" alt="imagen" />
+          <div className="col-5">
+            <img
+              src={portadaPng}
+              className="img-fluid img-portada"
+              alt="imagen"
+            />
           </div>
         </div>
       </div>

@@ -9,26 +9,26 @@ const Login = () => {
 
   return (
     <main>
-      <div class="container padding-t text-center">
-        <img src={loginImgPng} class="ms-1 img-login" alt="favorito" />
+      <div className="container padding-t text-center">
+        <img src={loginImgPng} className="ms-1 img-login" alt="favorito" />
 
-        <h1 class="title-login">Acceder a mi cuenta</h1>
-        <form class="container-form mx-auto text-start">
+        <h1 className="title-login">Acceder a mi cuenta</h1>
+        <form className="container-form mx-auto text-start">
           <div>
-            <label class="ms-2">Email</label>
+            <label className="ms-2">Email</label>
             <input
               type="email"
-              class="form-control mb-2"
+              className="form-control mb-2"
               placeholder="usuario@boardkingdom.com"
             />
           </div>
           <div>
-            <label class="ms-2">Password</label>
-            <input type="password" class="form-control mb-5" />
+            <label className="ms-2">Password</label>
+            <input type="password" className="form-control mb-5" />
           </div>
 
-          <div class="text-center mb-2">
-            <button type="submit" class="btn btn-secondary w-50">
+          <div className="text-center mb-2">
+            <button type="submit" className="btn btn-secondary w-50">
               Login
             </button>
           </div>

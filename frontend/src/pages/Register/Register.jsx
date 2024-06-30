@@ -8,49 +8,50 @@ const Register = () => {
 
   return (
     <main>
-      <div class="container padding-t text-center">
-        <img src={loginImgPng} class="ms-1 img-login" alt="favorito" />
+      <div className="container padding-t text-center">
+        <img src={loginImgPng} className="ms-1 img-login" alt="favorito" />
 
-        <h1 class="title-login-register">
-          Te damos la bienvenida a <span class="fuente5">Board Kingdom</span>
+        <h1 className="title-login-register">
+          Te damos la bienvenida a{' '}
+          <span className="fuente5">Board Kingdom</span>
         </h1>
-        <form class="container-form-register mx-auto text-start mt-4">
-          <div class="box-juegos mb-4">
-            <div class="d-flex">
-              <div class="col-4 pe-2">
-                <label class="ms-2">Alias</label>
+        <form className="container-form-register mx-auto text-start mt-4">
+          <div className="box-juegos mb-4">
+            <div className="d-flex">
+              <div className="col-4 pe-2">
+                <label className="ms-2">Alias</label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Elfo del Bosque"
                 />
-                <div class="ms-2 info-register">
+                <div className="ms-2 info-register">
                   <span>Hasta 20 caracteres.</span>
                 </div>
               </div>
 
-              <div class="col-8">
-                <label class="ms-2">Email</label>
+              <div className="col-8">
+                <label className="ms-2">Email</label>
                 <input
                   type="email"
-                  class="form-control"
+                  className="form-control"
                   placeholder="usuario@boardkingdom.com"
                 />
               </div>
             </div>
 
-            <div class="mb-4">
-              <label class="ms-2">Password</label>
-              <input type="password" class="form-control" />
+            <div className="mb-4">
+              <label className="ms-2">Password</label>
+              <input type="password" className="form-control" />
 
-              <div class="ms-2 info-register">
+              <div className="ms-2 info-register">
                 <span>Debe tener al menos 3 caracteres y un número.</span>
               </div>
             </div>
           </div>
 
-          <div class="text-center mb-2">
-            <button type="submit" class="btn btn-secondary w-50">
+          <div className="text-center mb-2">
+            <button type="submit" className="btn btn-secondary w-50">
               Crear mi cuenta
             </button>
           </div>
