@@ -73,7 +73,7 @@ button:focus-visible {
 /* --------------------------------------------------------------- */
 /* -------------------Fonts---------------------- */
 .fuente1 {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
   font-weight: 600;
   color: #c17e09;
   filter: drop-shadow(0 0px 20px rgb(15, 0, 15));
@@ -81,7 +81,7 @@ button:focus-visible {
 }
 
 .fuente2 {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
   font-weight: 600;
   font-size: 2.5rem;
   color: #90628c;
@@ -99,10 +99,26 @@ button:focus-visible {
 }
 
 .fuente5 {
-  font-family: 'Josefin Slab', serif;
+  font-family: "Josefin Slab", serif;
   color: rgb(229, 210, 185);
   font-weight: 800;
   font-size: 2.7rem;
+}
+
+.fuente6 {
+  font-family: "Josefin Slab", serif;
+  color: rgb(229, 210, 185);
+  filter: drop-shadow(0 2px 10px rgba(215, 136, 26, 0.769));
+  font-weight: 800;
+  font-size: 1.8rem;
+}
+
+.fuente6 {
+  font-family: "Josefin Slab", serif;
+  color: rgb(229, 210, 185);
+  filter: drop-shadow(0 2px 10px rgba(215, 136, 26, 0.769));
+  font-weight: 800;
+  font-size: 2rem;
 }
 
 .text-bg-secondary {
@@ -114,6 +130,15 @@ button:focus-visible {
 
 p {
   margin: 0;
+}
+
+.margin-t {
+  margin-top: 7rem;
+}
+
+.padding-title {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
 }
 
 .padding-t {
@@ -131,11 +156,11 @@ p {
 
 .padding-carousel {
   padding-top: 8rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .padding-search {
-  padding-top: 3rem;
+  padding-top: 1rem;
   padding-bottom: 4rem;
 }
 
@@ -223,12 +248,12 @@ p {
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.952));
 }
 
-/*--------------------body------------------- */
+/*--------------------Body------------------- */
 
 /* --------------------------Portada------------------------------ */
 /* --------------------------------------------------------------- */
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1.1rem;
   line-height: 2.1rem;
   background: linear-gradient(
@@ -271,7 +296,7 @@ body {
 .btn-secondary:hover {
   filter: drop-shadow(0 3px 7px rgba(210, 194, 68, 0.452));
 }
-/* --------------------------Libreria----------------------------- */
+/* --------------------------Colleción----------------------------- */
 /* --------------------------------------------------------------- */
 
 /* --------------  bar search  ------------------- */
@@ -325,6 +350,11 @@ body {
   background: #c17e09;
 }
 
+.btn-categoria {
+  color: rgb(59, 35, 58);
+  filter: drop-shadow(0 1px 7px rgba(157, 90, 9, 0.815));
+}
+
 /* -----------------box juegos-------------------- */
 .box-juegos {
   padding: 1rem;
@@ -341,6 +371,43 @@ body {
   filter: drop-shadow(0 5px 20px rgba(28, 13, 1, 0.382));
   border-radius: 30px 30px 30px 30px;
   border: 1px solid rgba(183, 140, 20, 0.289);
+}
+
+/* ---------- Favorito check -----------------*/
+.favorite-checkbox {
+  display: none;
+}
+.favorite-checkbox + label::before {
+  content: "\f006";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  font-size: 24px;
+  color: grey;
+  cursor: pointer;
+  display: inline-block;
+}
+.favorite-checkbox:checked + label::before {
+  content: "\f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: gold;
+}
+
+.pagination {
+  --bs-pagination-bg: none;
+  --bs-pagination-border-width: none;
+  --bs-pagination-color: none;
+  --bs-pagination-hover-border: none;
+  --bs-pagination-hover-color: none;
+  --bs-pagination-hover-bg: none;
+  --bs-pagination-focus-bg: none;
+  --bs-pagination-focus-color: none;
+  color: #e29c24;
+}
+
+.page-item:hover {
+  background: #665278c3;
+  color: #e29c24;
 }
 
 /* -----------------------------Login----------------------------- */
@@ -444,6 +511,74 @@ body {
   border-radius: 30px 30px 30px 30px;
   border: 1px solid rgba(183, 140, 20, 0.289);
 }
+
+/* ------------------------ Collecion --------------------------- */
+.title-info {
+  color: rgb(153, 153, 201);
+  filter: drop-shadow(0 2px 7px rgba(66, 39, 1, 0.923));
+  font-weight: 800;
+}
+.title-info-alta {
+  color: rgb(153, 153, 201);
+  /* filter: drop-shadow(0 2px 7px rgba(66, 39, 1, 0.923)); */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.user-alta {
+  color: antiquewhite;
+  font-size: 0.8rem;
+}
+
+.bg-lista {
+  filter: drop-shadow(0 5px 10px rgb(66, 39, 1));
+  /* background: rgb(31, 18, 30); */
+}
+
+.icon-acc {
+  color: #e29c24;
+  filter: drop-shadow(0 2px 8px rgba(28, 13, 1, 0.382));
+}
+
+.icon-acc-del {
+  color: #7b1857;
+  filter: drop-shadow(0 2px 8px rgba(150, 84, 3, 0.382));
+}
+
+.h2-lista {
+  font-size: 1.8rem;
+}
+
+.icon-cat {
+  font-size: 8rem;
+  color: #ffa100;
+}
+
+/* --------- Checkbox favorito ----------- */
+.heart-checkbox {
+  display: none;
+}
+
+.heart-label {
+  font-family: "Font Awesome 6 Free";
+  content: "\f004";
+  font-weight: lighter;
+  color: #ffbf00df;
+  font-size: 2.7rem;
+  filter: drop-shadow(0 2px 10px rgba(100, 16, 131, 0.651));
+  cursor: pointer;
+}
+
+.heart-checkbox:checked + .heart-label {
+  font-weight: 900;
+  color: #ffbf00;
+  filter: drop-shadow(0 2px 10px rgba(215, 136, 26, 0.769));
+}
+
+.heart-checkbox + .heart-label:before {
+  content: "\f004";
+}
+/* ---------------------------------- */
 
 /* ------------------Footer------------------ */
 

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import portadaPng from '../../assets/img/portada.png';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+// import portadaPng from "../../assets/img/portada.png";
 
 const Subir = () => {
   const [user, setUsers] = useState([]);
@@ -21,24 +21,28 @@ const Subir = () => {
 
         <form class="container-form-register mx-auto text-start mt-4">
           <div class="box-subir mb-4">
-            <div class="d-flex">
+            <div class="d-flex align-items-center">
               <div class="col-4 me-3">
-                <img
-                  src={portadaPng}
-                  class="img-fluid img-portada"
-                  alt="imagen"
-                />
+                <div class="d-flex flex-column">
+                  <div class="mb-4 d-flex justify-content-center">
+                    <i class="fa-solid fa-wand-magic-sparkles icon-cat"></i>
+                  </div>
 
-                <div class="mb-4">
-                  <select
-                    class="form-select"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Categoría</option>
-                    <option value="1">Estrategia</option>
-                    <option value="2">Rol</option>
-                    <option value="3">Cartas</option>
-                  </select>
+                  <div class="">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Categoría</option>
+                      <option value="1">Estrategia</option>
+                      <option value="2">Rol</option>
+                      <option value="3">Cartas</option>
+                      <option value="4">Construcción</option>
+                      <option value="5">Comercio</option>
+                      <option value="6">Cooperativo</option>
+                      <option value="7">Party</option>
+                    </select>
+                  </div>
                 </div>
               </div>
 
@@ -106,6 +110,95 @@ const Subir = () => {
             </button>
           </div>
         </form>
+      </div>
+
+      <div class="container bg-lista">
+        <h2 class="text-start margin-t mb-5 h2-lista">
+          Mi lista de juegos añadidos
+        </h2>
+        <ol>
+          <li class="mb-5">
+            <div class="box-juegos d-flex justify-content-start">
+              <h3 class="col-3 fuente6 d-flex justify-content-start align-items-center">
+                Love Letter
+              </h3>
+              <div class="col-1 d-flex flex-column justify-content-start align-items-start">
+                <span class="title-info">Categoría</span>
+                <p class="">Party</p>
+              </div>
+              <div class="col-1 d-flex flex-column">
+                <div class="mb-2">
+                  <span class="title-info">Editorial</span>
+                  <p class="">Devir</p>
+                </div>
+                <div>
+                  <span class="title-info">Tiempo</span>
+                  <p class="">30' a 45'</p>
+                </div>
+              </div>
+              <div class="col-6 d-flex flex-column">
+                <span class="title-info">Descripción</span>
+                <p class="">
+                  Love Letter es un juego de cartas estratégico y rápido para 2
+                  a 4 jugadores. Los jugadores intentan entregar su carta de
+                  amor a la princesa mientras eliminan a sus oponentes usando
+                  efectos de cartas. El objetivo es ser el último en pie o tener
+                  la carta de mayor valor al final de la ronda.
+                </p>
+              </div>
+
+              <div class="col-1 d-flex flex-column justify-content-start align-items-end">
+                <button class="btn mb-2 icon-acc">
+                  <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                </button>
+                <button class="btn icon-acc-del">
+                  <i class="fa-solid fa-trash fa-2xl"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-5">
+            <div class="box-juegos d-flex justify-content-start">
+              <h3 class="col-3 fuente6 d-flex justify-content-start align-items-center">
+                Love Letter
+              </h3>
+              <div class="col-1 d-flex flex-column justify-content-start align-items-start">
+                <span class="title-info">Categoría</span>
+                <p class="">Party</p>
+              </div>
+              <div class="col-1 d-flex flex-column">
+                <div class="mb-2">
+                  <span class="title-info">Editorial</span>
+                  <p class="">Devir</p>
+                </div>
+                <div>
+                  <span class="title-info">Tiempo</span>
+                  <p class="">30' a 45'</p>
+                </div>
+              </div>
+              <div class="col-6 d-flex flex-column">
+                <span class="title-info">Descripción</span>
+                <p class="">
+                  Love Letter es un juego de cartas estratégico y rápido para 2
+                  a 4 jugadores. Los jugadores intentan entregar su carta de
+                  amor a la princesa mientras eliminan a sus oponentes usando
+                  efectos de cartas. El objetivo es ser el último en pie o tener
+                  la carta de mayor valor al final de la ronda.
+                </p>
+              </div>
+
+              <div class="col-1 d-flex flex-column justify-content-start align-items-end">
+                <button class="btn mb-2 icon-acc">
+                  <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                </button>
+                <button class="btn icon-acc-del">
+                  <i class="fa-solid fa-trash fa-2xl"></i>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ol>
       </div>
     </main>
   );

@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import favoritoSvg from '../../assets/img/favorito.svg';
-import logoSvg from '../../assets/img/logo.svg';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import favoritoSvg from "../../assets/img/favorito.svg";
+import logoSvg from "../../assets/img/logo.svg";
 
 const Navbar = () => {
   return (
@@ -40,7 +40,10 @@ const Navbar = () => {
                   </li>
 
                   <li class="nav-item">
-                    <a href="" class="btn link-nav-user text-center">
+                    <NavLink
+                      to="/Favoritos"
+                      className="btn link-nav-user text-center"
+                    >
                       <span>
                         <img
                           src={favoritoSvg}
@@ -49,7 +52,7 @@ const Navbar = () => {
                         />
                       </span>
                       Mis favoritos
-                    </a>
+                    </NavLink>
                   </li>
                 </ul>
 
