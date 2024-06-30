@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCircleChevronLeft,
+  faCircleChevronRight,
+  faHeart,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Favoritos = () => {
   const [user, setUsers] = useState([]);
@@ -8,7 +14,8 @@ const Favoritos = () => {
   return (
     <main>
       <h1 class="title-login-register text-center padding-title">
-        <i class="fa-solid fa-heart fa-sm"></i> Mi lista de Eurogames favoritos
+        <FontAwesomeIcon icon={faHeart} className="fa-sm"></FontAwesomeIcon> Mi
+        lista de Eurogames favoritos
       </h1>
 
       <div class="container">
@@ -91,7 +98,10 @@ const Favoritos = () => {
             <ul class="pagination justify-content-end">
               <li class="page-item">
                 <a class="page-link">
-                  <i class="fa-solid fa-circle-chevron-left fa-2xl me-2"></i>
+                  <FontAwesomeIcon
+                    icon={faCircleChevronLeft}
+                    className="fa-2xl me-2"
+                  ></FontAwesomeIcon>
                   Anterior
                 </a>
               </li>
@@ -113,7 +123,10 @@ const Favoritos = () => {
               <li class="page-item">
                 <a class="page-link" href="#">
                   Siguiente
-                  <i class="fa-solid fa-circle-chevron-right fa-2xl ms-2"></i>
+                  <FontAwesomeIcon
+                    icon={faCircleChevronRight}
+                    className="fa-2xl me-2"
+                  ></FontAwesomeIcon>
                 </a>
               </li>
             </ul>

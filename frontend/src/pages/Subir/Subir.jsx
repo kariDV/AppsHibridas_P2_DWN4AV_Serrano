@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPenToSquare,
+  faTrash,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons';
 // import portadaPng from "../../assets/img/portada.png";
 
 const Subir = () => {
@@ -25,7 +31,10 @@ const Subir = () => {
               <div class="col-4 me-3">
                 <div class="d-flex flex-column">
                   <div class="mb-4 d-flex justify-content-center">
-                    <i class="fa-solid fa-wand-magic-sparkles icon-cat"></i>
+                    <FontAwesomeIcon
+                      icon={faWandMagicSparkles}
+                      className="icon-cat"
+                    ></FontAwesomeIcon>
                   </div>
 
                   <div class="">
@@ -149,10 +158,16 @@ const Subir = () => {
 
               <div class="col-1 d-flex flex-column justify-content-start align-items-end">
                 <button class="btn mb-2 icon-acc">
-                  <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                  <FontAwesomeIcon
+                    icon={faPenToSquare}
+                    className="fa-2xl"
+                  ></FontAwesomeIcon>
                 </button>
                 <button class="btn icon-acc-del">
-                  <i class="fa-solid fa-trash fa-2xl"></i>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="fa-2xl"
+                  ></FontAwesomeIcon>
                 </button>
               </div>
             </div>
@@ -190,10 +205,16 @@ const Subir = () => {
 
               <div class="col-1 d-flex flex-column justify-content-start align-items-end">
                 <button class="btn mb-2 icon-acc">
-                  <i class="fa-regular fa-pen-to-square fa-2xl"></i>
+                  <FontAwesomeIcon
+                    icon={faPenToSquare}
+                    className="fa-2xl"
+                  ></FontAwesomeIcon>
                 </button>
                 <button class="btn icon-acc-del">
-                  <i class="fa-solid fa-trash fa-2xl"></i>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    className="fa-2xl"
+                  ></FontAwesomeIcon>
                 </button>
               </div>
             </div>

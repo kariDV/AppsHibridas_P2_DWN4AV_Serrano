@@ -1,5 +1,17 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBullseye,
+  faCakeCandles,
+  faCircleChevronLeft,
+  faCircleChevronRight,
+  faDiamond,
+  faHammer,
+  faHandHoldingDollar,
+  faHandshakeAngle,
+  faWandMagicSparkles,
+} from '@fortawesome/free-solid-svg-icons';
 // import portadaPng from '../../assets/img/portada.png';
 
 const Coleccion = () => {
@@ -13,33 +25,42 @@ const Coleccion = () => {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-bullseye px-5 fa-2xl"></i>
+                <FontAwesomeIcon icon={faBullseye} className="px-5 fa-2xl" />
                 <p>Estrategia</p>
               </button>
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-hammer px-5 fa-2xl"></i>
+                <FontAwesomeIcon icon={faHammer} className="px-5 fa-2xl" />
                 <p>Construcción</p>
               </button>
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-handshake-angle px-5 fa-2xl"></i>
+                <FontAwesomeIcon
+                  icon={faHandshakeAngle}
+                  className="px-5 fa-2xl"
+                />
                 <p>Cooperativo</p>
               </button>
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-wand-magic-sparkles px-5 fa-2xl"></i>
+                <FontAwesomeIcon
+                  icon={faWandMagicSparkles}
+                  className="px-5 fa-2xl"
+                />
                 <p>Rol</p>
               </button>
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-cake-candles px-5 fa-2xl"></i>
+                <FontAwesomeIcon icon={faCakeCandles} className="px-5 fa-2xl" />
                 <p>Party</p>
               </button>
             </div>
             <div class="carousel-item">
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-diamond px-5 fa-2xl"></i>
+                <FontAwesomeIcon icon={faDiamond} className="px-5 fa-2xl" />
                 <p>Cartas</p>
               </button>
               <button class="btn flex-wrap btn-categoria">
-                <i class="fa-solid fa-hand-holding-dollar px-5 fa-2xl"></i>
+                <FontAwesomeIcon
+                  icon={faHandHoldingDollar}
+                  className="px-5 fa-2xl"
+                />
                 <p>Comercio</p>
               </button>
             </div>
@@ -206,7 +227,10 @@ const Coleccion = () => {
             <ul class="pagination justify-content-end">
               <li class="page-item">
                 <a class="page-link">
-                  <i class="fa-solid fa-circle-chevron-left fa-2xl me-2"></i>
+                  <FontAwesomeIcon
+                    icon={faCircleChevronLeft}
+                    className="fa-2xl me-2"
+                  ></FontAwesomeIcon>
                   Anterior
                 </a>
               </li>
@@ -228,7 +252,10 @@ const Coleccion = () => {
               <li class="page-item">
                 <a class="page-link" href="#">
                   Siguiente
-                  <i class="fa-solid fa-circle-chevron-right fa-2xl ms-2"></i>
+                  <FontAwesomeIcon
+                    icon={faCircleChevronRight}
+                    className="fa-2xl me-2"
+                  ></FontAwesomeIcon>
                 </a>
               </li>
             </ul>
