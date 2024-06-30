@@ -208,13 +208,23 @@ p {
   transition: 1s;
 }
 
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active {
+  border: none;
+  filter: drop-shadow(0 1px 10px rgb(255, 255, 255));
+  color: rgb(246, 217, 0);
+}
+
 /* .navbar-api:hover {
   color: antiquewhite;
 } */
 
 .text-nav-link:hover {
-  color: rgb(189, 189, 232);
-  filter: drop-shadow(0 2px 20px rgba(255, 255, 255, 0.582));
+  color: rgb(205, 209, 253);
+  filter: drop-shadow(0 2px 10px rgb(255, 234, 189));
   transition: 1s;
 }
 .link-nav-user {
