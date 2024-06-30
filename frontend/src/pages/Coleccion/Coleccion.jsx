@@ -152,12 +152,12 @@ const Coleccion = () => {
               </div>
 
               <div class="col-1 d-flex justify-content-center align-items-center">
-                <input
+                {/* <input
                   type="checkbox"
                   id="heart-checkbox"
                   class="heart-checkbox"
                 />
-                <label for="heart-checkbox" class="heart-label"></label>
+                <label for="heart-checkbox" class="heart-label"></label> */}
               </div>
             </div>
           </li>
@@ -196,12 +196,12 @@ const Coleccion = () => {
               </div>
 
               <div class="col-1 d-flex justify-content-center align-items-center">
-                <input
+                {/* <input
                   type="checkbox"
                   id="heart-checkbox-1"
                   class="heart-checkbox"
                 />
-                <label for="heart-checkbox-1" class="heart-label"></label>
+                <label for="heart-checkbox-1" class="heart-label"></label> */}
               </div>
             </div>
           </li>
