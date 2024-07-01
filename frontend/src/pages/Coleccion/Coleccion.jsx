@@ -152,7 +152,7 @@ const Coleccion = () => {
                 </h2>
                 <div className="col-1 d-flex flex-column justify-content-start align-items-start">
                   <span className="title-info">Categoría</span>
-                  <p className="">{juego.idCategoria}</p>
+                  <p className="">{juego.categoria}</p>
                 </div>
                 <div className="col-1 d-flex flex-column">
                   <div className="mb-2">
