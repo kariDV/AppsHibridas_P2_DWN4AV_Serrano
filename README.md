@@ -4,8 +4,8 @@
 
     PORT = 3000
     MONGO_URL = "mongodb://127.0.0.1:27017/APIBoardDB"
-    SEED=4Lwhkcl9IU0tQV16dtuti80eMyp4oetzTHjwU4m9sKOvIx5GTaUBIYSiQ62c2vh5
-    EXPIRATION=10
+    SEED=palabraSecretaDelServidorPiriPitiFlautico
+    EXPIRATION=60M
 
 # Datos de prueba para MONGO DB (Juegos)
 
