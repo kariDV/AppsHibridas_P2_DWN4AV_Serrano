@@ -13,8 +13,8 @@ async function getJuegoTitulo(tit) {
   return juegosSelec;
 }
 
-async function getJuegoCategoria(idCat) {
-  let juegosSelec = await Juegos.find({ idCategoria: idCat });
+async function getJuegoCategoria(cat) {
+  let juegosSelec = await Juegos.find({ categoria: cat });
   return juegosSelec;
 }
 
@@ -49,7 +49,7 @@ async function createJuego(body) {
   let nuevoJuego = new Juegos({
     idJuego: body.idJuego,
     titulo: body.titulo,
-    idCategoria: body.idCategoria,
+    categoria: body.categoria,
     descripcion: body.descripcion,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,
@@ -64,7 +64,7 @@ async function updateJuegoId(idJuego, body) {
       $set: {
         idJuego: body.idJuego,
         titulo: body.titulo,
-        idCategoria: body.idCategoria,
+        categoria: body.categoria,
         descripcion: body.descripcion,
         editorial: body.editorial,
         tiempoDeJuego: body.tiempoDeJuego,

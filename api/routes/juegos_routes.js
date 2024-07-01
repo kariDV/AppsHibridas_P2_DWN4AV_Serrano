@@ -18,7 +18,7 @@ const ruta = express.Router();
 const schemaJuego = Joi.object({
   idJuego: Joi.number().integer().required(),
   titulo: Joi.string().min(3).max(30).required(),
-  idCategoria: Joi.number().integer().required(),
+  categoria: Joi.string().min(3).max(30).required(),
   descripcion: Joi.string().min(3).max(30000).required(),
   editorial: Joi.string().min(3).max(20),
   tiempoDeJuego: Joi.number().integer().min(1).max(240),
@@ -31,8 +31,8 @@ ruta.get('/', (req, res) => {
     resultado = getJuegoTitulo(req.query.titulo);
   }
   // busqueda de juegos por categoria
-  else if (req.query.idCategoria) {
-    resultado = getJuegoCategoria(req.query.idCategoria);
+  else if (req.query.categoria) {
+    resultado = getJuegoCategoria(req.query.categoria);
   }
   // busqueda de juegos con paginado
   else if (req.query.pagina) {
@@ -72,7 +72,7 @@ ruta.post('/', verificarToken, (req, res) => {
   const { error, value } = schemaJuego.validate({
     idJuego: body.idJuego,
     titulo: body.titulo,
-    idCategoria: body.idCategoria,
+    categoria: body.categoria,
     descripcion: body.descripcion,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,

@@ -11,8 +11,8 @@ const juegoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  idCategoria: {
-    type: Number,
+  categoria: {
+    type: String,
     required: true,
   },
   descripcion: {
