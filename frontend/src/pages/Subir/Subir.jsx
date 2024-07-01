@@ -6,12 +6,8 @@ import {
   faTrash,
   faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
-// import portadaPng from "../../assets/img/portada.png";
 
 const Subir = () => {
-  const [user, setUsers] = useState([]);
-  const [loading, setLoading] = useState([]);
-
   return (
     <main>
       <div className="container padding-t text-center">
@@ -61,7 +57,7 @@ const Subir = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="Elfo del Bosque"
+                    placeholder="Catan"
                   />
                 </div>
 
@@ -71,20 +67,16 @@ const Subir = () => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Elfo del Bosque"
+                      placeholder="Devir"
                     />
                   </div>
                   <div className="col-5">
                     <label className="ms-2">Tiempo de juego</label>
-                    <select
-                      className="form-select"
-                      aria-label="Default select example"
-                    >
-                      <option value="0">Tiempo de juego</option>
-                      <option value="1">15' a 35' min</option>
-                      <option value="2">35' a 50' min</option>
-                      <option value="3">50' a 120' min</option>
-                    </select>
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="25"
+                    />
                   </div>
                 </div>
 
@@ -94,6 +86,7 @@ const Subir = () => {
                     name="textarea"
                     rows="5"
                     className="form-control"
+                    placeholder="Catán es un popular juego de mesa estratégico en el que los jugadores colonizan una isla, construyendo asentamientos y carreteras, intercambiando recursos y compitiendo por obtener la mayor cantidad de puntos de victoria."
                   ></textarea>
                 </div>
               </div>

@@ -40,7 +40,7 @@ ruta.post('/', (req, res) => {
           });
           // res.status(200).send('password correcta! ✅');
         } else {
-          res.status(200).send('password incorrecta! ⛔');
+          res.status(400).send('password incorrecta! ⛔');
         }
       } else {
         res.status(400).send('usuario inexistente! 🤷🏻');

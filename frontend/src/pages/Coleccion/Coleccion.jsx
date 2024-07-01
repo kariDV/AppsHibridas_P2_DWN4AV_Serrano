@@ -144,7 +144,7 @@ const Coleccion = () => {
       <div className="container">
         <ol>
           {juegos.map((juego) => (
-            <li className="mb-5" key={juego.idJuego}>
+            <li className="mb-5" key={juego._id}>
               <div className="box-juegos d-flex justify-content-start">
                 <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
                   {juego.titulo}
