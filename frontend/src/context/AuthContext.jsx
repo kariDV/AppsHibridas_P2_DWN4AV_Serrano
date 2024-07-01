@@ -16,7 +16,7 @@ export const AuthContextProvider = function ({ children }) {
     if (auth) {
       const decoded = jwtDecode(auth);
       setUser({
-        id: decoded.usuario._id,
+        _id: decoded.usuario._id,
         email: decoded.usuario.email,
         alias: decoded.usuario.alias,
       });

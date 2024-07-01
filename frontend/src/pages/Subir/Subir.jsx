@@ -46,6 +46,10 @@ const Subir = () => {
   const crearJuego = function (e) {
     e.preventDefault();
 
+    setJuegoForm({ ...juegoForm, idUsuarioAlta: user._id });
+    console.log(user);
+    console.log(juegoForm);
+
     axios
       .post('http://localhost:3000/api/juegos', juegoForm, header)
       .then((res) => {
@@ -65,6 +69,19 @@ const Subir = () => {
     axios
       .get(`http://localhost:3000/api/juegos?usuario=${user._id}`)
       .then((res) => setMisJuegos(res.data));
+  };
+
+  const eliminarJuego = function (e) {
+    const idJuego = e.target.closest('li').getAttribute('data-key');
+    axios
+      .delete(`http://localhost:3000/api/juegos/${idJuego}`, header)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {});
   };
 
   return (
@@ -229,7 +246,7 @@ const Subir = () => {
         </h2>
         <ol>
           {misJuegos.map((juego) => (
-            <li className='mb-5' key={juego._id}>
+            <li className='mb-5' key={juego._id} data-key={juego._id}>
               <div className='box-juegos d-flex justify-content-start'>
                 <h3 className='col-3 fuente6 d-flex justify-content-start align-items-center'>
                   {juego.titulo}
@@ -254,13 +271,13 @@ const Subir = () => {
                 </div>
 
                 <div className='col-1 d-flex flex-column justify-content-start align-items-end'>
-                  <button className='btn mb-2 icon-acc'>
+                  {/* <button className='btn mb-2 icon-acc'>
                     <FontAwesomeIcon
                       icon={faPenToSquare}
                       className='fa-2xl'
                     ></FontAwesomeIcon>
-                  </button>
-                  <button className='btn icon-acc-del'>
+                  </button> */}
+                  <button className='btn icon-acc-del' onClick={eliminarJuego}>
                     <FontAwesomeIcon
                       icon={faTrash}
                       className='fa-2xl'
