@@ -158,7 +158,7 @@ const Coleccion = () => {
                       <span className='title-info'>Categoría</span>
                       <p className=''>{juego.categoria}</p>
                     </div>
-                    <div className='col-1 d-flex flex-column'>
+                    <div className='col-2 d-flex flex-column'>
                       <div className='mb-2'>
                         <span className='title-info'>Editorial</span>
                         <p className=''>{juego.editorial}</p>
@@ -171,10 +171,6 @@ const Coleccion = () => {
                     <div className='col-5 d-flex flex-column'>
                       <span className='title-info'>Descripción</span>
                       <p className=''>{juego.descripcion}</p>
-                    </div>
-                    <div className='col-1 d-flex flex-column justify-content-center align-items-end'>
-                      <span className='title-info-alta'>Subido por :</span>
-                      <p className='text-center user-alta'>Elfa del Bosque</p>
                     </div>
 
                     <div className='col-1 d-flex justify-content-center align-items-center'>

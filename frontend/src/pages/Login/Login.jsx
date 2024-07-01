@@ -41,20 +41,20 @@ const Login = () => {
 
   return (
     <main>
-      <div className="container padding-t text-center">
-        <img src={loginImgPng} className="ms-1 img-login" alt="favorito" />
+      <div className='container padding-t text-center'>
+        <img src={loginImgPng} className='ms-1 img-login' alt='favorito' />
 
-        <h1 className="title-login">Acceder a mi cuenta</h1>
+        <h1 className='title-login'>Acceder a mi cuenta</h1>
         <form
-          className="container-form mx-auto text-start"
+          className='container-form mx-auto text-start'
           onSubmit={logInCuenta}
         >
           <div>
-            <label className="ms-2">Email</label>
+            <label className='ms-2'>Email</label>
             <input
-              type="email"
-              className="form-control mb-2"
-              placeholder="usuario@boardkingdom.com"
+              type='email'
+              className='form-control mb-2'
+              placeholder='usuario@boardkingdom.com'
               value={userLogin.email}
               onChange={(e) =>
                 setUserLogin({ ...userLogin, email: e.target.value })
@@ -62,10 +62,10 @@ const Login = () => {
             />
           </div>
           <div>
-            <label className="ms-2">Password</label>
+            <label className='ms-2'>Password</label>
             <input
-              type="password"
-              className="form-control mb-5"
+              type='password'
+              className='form-control mb-5'
               value={userLogin.password}
               onChange={(e) =>
                 setUserLogin({ ...userLogin, password: e.target.value })
@@ -73,24 +73,28 @@ const Login = () => {
             />
           </div>
 
-          <div className="text-center mb-2">
-            <button type="submit" className="btn btn-secondary w-50">
+          <div className='text-center mb-2'>
+            <button type='submit' className='btn btn-secondary w-50'>
               Login
             </button>
           </div>
         </form>
         <span>
           ¿No tienes una cuenta? Puedes{' '}
-          <NavLink to="/Register">Registrarte aquí</NavLink>
+          <NavLink to='/Register'>Registrarte aquí</NavLink>
         </span>
 
         <div>
           <br />
           {login ? (
             loginOk ? (
-              <span className="fuente3">Ha iniciado sesión con éxito!</span>
+              <span className='alert alert-success' role='alert'>
+                Ha iniciado sesión con éxito!
+              </span>
             ) : (
-              <span className="fuente2">No se pudo iniciar sesión!</span>
+              <span className='alert alert-danger' role='alert'>
+                No se pudo iniciar sesión!
+              </span>
             )
           ) : (
             <br />

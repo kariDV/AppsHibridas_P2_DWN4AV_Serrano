@@ -228,10 +228,13 @@ const Subir = () => {
           <br />
           {subir ? (
             subirOk ? (
-              <span className='fuente3'>Juego Subido con Éxtio!</span>
+              <span className='alert alert-success' role='alert'>
+                ¡Juego Subido con Éxito!
+              </span>
             ) : (
-              <span className='fuente2'>
-                No se pudo subir el juego cargado!
+              <span className='alert alert-danger' role='alert'>
+                No se pudo subir el juego, verifica que los datos esten
+                correctos.
               </span>
             )
           ) : (
