@@ -19,7 +19,7 @@ const Subir = () => {
     tiempoDeJuego: 0,
     idUsuarioAlta: '',
   });
-
+  const [misJuegos, setMisJuegos] = useState([]);
   const [subir, setSubir] = useState(false);
   const [subirOk, setSubirOk] = useState(false);
 
@@ -27,8 +27,10 @@ const Subir = () => {
 
   // EFFECTS
   useEffect(() => {
-    setJuegoForm({ ...juegoForm, idUsuarioAlta: user?.id });
-    console.log('pasé por useEffect');
+    if (user) {
+      setJuegoForm({ ...juegoForm, idUsuarioAlta: user?.id });
+      traerMisJuegos();
+    }
   }, [user]);
 
   // COOKIES
@@ -57,6 +59,12 @@ const Subir = () => {
         setSubir(true);
         setTimeout(() => setSubir(false), 2500);
       });
+  };
+
+  const traerMisJuegos = function () {
+    axios
+      .get(`http://localhost:3000/api/juegos?usuario=${user.id}`)
+      .then((res) => setMisJuegos(res.data));
   };
 
   return (
@@ -220,99 +228,48 @@ const Subir = () => {
           Mi lista de juegos añadidos
         </h2>
         <ol>
-          <li className="mb-5">
-            <div className="box-juegos d-flex justify-content-start">
-              <h3 className="col-3 fuente6 d-flex justify-content-start align-items-center">
-                Love Letter
-              </h3>
-              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span className="title-info">Categoría</span>
-                <p className="">Party</p>
-              </div>
-              <div className="col-1 d-flex flex-column">
-                <div className="mb-2">
-                  <span className="title-info">Editorial</span>
-                  <p className="">Devir</p>
+          {misJuegos.map((juego) => (
+            <li className="mb-5" key={juego._id}>
+              <div className="box-juegos d-flex justify-content-start">
+                <h3 className="col-3 fuente6 d-flex justify-content-start align-items-center">
+                  {juego.titulo}
+                </h3>
+                <div className="col-1 d-flex flex-column justify-content-start align-items-start">
+                  <span className="title-info">Categoría</span>
+                  <p className="">{juego.categoria}</p>
                 </div>
-                <div>
-                  <span className="title-info">Tiempo</span>
-                  <p className="">30' a 45'</p>
+                <div className="col-1 d-flex flex-column">
+                  <div className="mb-2">
+                    <span className="title-info">Editorial</span>
+                    <p className="">{juego.editorial}</p>
+                  </div>
+                  <div>
+                    <span className="title-info">Tiempo</span>
+                    <p className="">{juego.tiempoDeJuego}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-6 d-flex flex-column">
-                <span className="title-info">Descripción</span>
-                <p className="">
-                  Love Letter es un juego de cartas estratégico y rápido para 2
-                  a 4 jugadores. Los jugadores intentan entregar su carta de
-                  amor a la princesa mientras eliminan a sus oponentes usando
-                  efectos de cartas. El objetivo es ser el último en pie o tener
-                  la carta de mayor valor al final de la ronda.
-                </p>
-              </div>
+                <div className="col-6 d-flex flex-column">
+                  <span className="title-info">Descripción</span>
+                  <p className="">{juego.descripcion}</p>
+                </div>
 
-              <div className="col-1 d-flex flex-column justify-content-start align-items-end">
-                <button className="btn mb-2 icon-acc">
-                  <FontAwesomeIcon
-                    icon={faPenToSquare}
-                    className="fa-2xl"
-                  ></FontAwesomeIcon>
-                </button>
-                <button className="btn icon-acc-del">
-                  <FontAwesomeIcon
-                    icon={faTrash}
-                    className="fa-2xl"
-                  ></FontAwesomeIcon>
-                </button>
-              </div>
-            </div>
-          </li>
-
-          <li className="mb-5">
-            <div className="box-juegos d-flex justify-content-start">
-              <h3 className="col-3 fuente6 d-flex justify-content-start align-items-center">
-                Love Letter
-              </h3>
-              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span className="title-info">Categoría</span>
-                <p className="">Party</p>
-              </div>
-              <div className="col-1 d-flex flex-column">
-                <div className="mb-2">
-                  <span className="title-info">Editorial</span>
-                  <p className="">Devir</p>
-                </div>
-                <div>
-                  <span className="title-info">Tiempo</span>
-                  <p className="">30' a 45'</p>
+                <div className="col-1 d-flex flex-column justify-content-start align-items-end">
+                  <button className="btn mb-2 icon-acc">
+                    <FontAwesomeIcon
+                      icon={faPenToSquare}
+                      className="fa-2xl"
+                    ></FontAwesomeIcon>
+                  </button>
+                  <button className="btn icon-acc-del">
+                    <FontAwesomeIcon
+                      icon={faTrash}
+                      className="fa-2xl"
+                    ></FontAwesomeIcon>
+                  </button>
                 </div>
               </div>
-              <div className="col-6 d-flex flex-column">
-                <span className="title-info">Descripción</span>
-                <p className="">
-                  Love Letter es un juego de cartas estratégico y rápido para 2
-                  a 4 jugadores. Los jugadores intentan entregar su carta de
-                  amor a la princesa mientras eliminan a sus oponentes usando
-                  efectos de cartas. El objetivo es ser el último en pie o tener
-                  la carta de mayor valor al final de la ronda.
-                </p>
-              </div>
-
-              <div className="col-1 d-flex flex-column justify-content-start align-items-end">
-                <button className="btn mb-2 icon-acc">
-                  <FontAwesomeIcon
-                    icon={faPenToSquare}
-                    className="fa-2xl"
-                  ></FontAwesomeIcon>
-                </button>
-                <button className="btn icon-acc-del">
-                  <FontAwesomeIcon
-                    icon={faTrash}
-                    className="fa-2xl"
-                  ></FontAwesomeIcon>
-                </button>
-              </div>
-            </div>
-          </li>
+            </li>
+          ))}
         </ol>
       </div>
     </main>
