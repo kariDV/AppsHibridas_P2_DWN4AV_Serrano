@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPenToSquare,
@@ -8,6 +10,55 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const Subir = () => {
+  // HOOKS
+  const [juegoForm, setJuegoForm] = useState({
+    titulo: '',
+    categoria: '',
+    descripcion: '',
+    editorial: '',
+    tiempoDeJuego: 0,
+    idUsuarioAlta: '',
+  });
+
+  const [subir, setSubir] = useState(false);
+  const [subirOk, setSubirOk] = useState(false);
+
+  const { user } = useContext(AuthContext);
+
+  // EFFECTS
+  useEffect(() => {
+    setJuegoForm({ ...juegoForm, idUsuarioAlta: user?.id });
+    console.log('pasé por useEffect');
+  }, [user]);
+
+  // COOKIES
+  const token = Cookies.get('jwToken');
+  const header = {
+    headers: {
+      'Content-Type': 'application/json',
+      auth: token,
+    },
+  };
+
+  // FUNCIONES
+  const crearJuego = function (e) {
+    e.preventDefault();
+
+    axios
+      .post('http://localhost:3000/api/juegos', juegoForm, header)
+      .then((res) => {
+        setSubirOk(true);
+      })
+      .catch((error) => {
+        setSubirOk(false);
+        console.log(error);
+      })
+      .finally(() => {
+        setSubir(true);
+        setTimeout(() => setSubir(false), 2500);
+      });
+  };
+
   return (
     <main>
       <div className="container padding-t text-center">
@@ -21,7 +72,10 @@ const Subir = () => {
           enriquecer a esta gran comunidad.
         </p>
 
-        <form className="container-form-register mx-auto text-start mt-4">
+        <form
+          className="container-form-register mx-auto text-start mt-4"
+          onSubmit={crearJuego}
+        >
           <div className="box-subir mb-4">
             <div className="d-flex align-items-center">
               <div className="col-4 me-3">
@@ -37,15 +91,22 @@ const Subir = () => {
                     <select
                       className="form-select"
                       aria-label="Default select example"
+                      value={juegoForm.categoria}
+                      onChange={(e) =>
+                        setJuegoForm({
+                          ...juegoForm,
+                          categoria: e.target.value,
+                        })
+                      }
                     >
-                      <option value="0">Categoría</option>
-                      <option value="1">Estrategia</option>
-                      <option value="2">Rol</option>
-                      <option value="3">Cartas</option>
-                      <option value="4">Construcción</option>
-                      <option value="5">Comercio</option>
-                      <option value="6">Cooperativo</option>
-                      <option value="7">Party</option>
+                      <option value="Categoría">Categoría</option>
+                      <option value="Estrategia">Estrategia</option>
+                      <option value="Rol">Rol</option>
+                      <option value="Cartas">Cartas</option>
+                      <option value="Construcción">Construcción</option>
+                      <option value="Comercio">Comercio</option>
+                      <option value="Cooperativo">Cooperativo</option>
+                      <option value="Party">Party</option>
                     </select>
                   </div>
                 </div>
@@ -58,6 +119,10 @@ const Subir = () => {
                     type="text"
                     className="form-control"
                     placeholder="Catan"
+                    value={juegoForm.titulo}
+                    onChange={(e) =>
+                      setJuegoForm({ ...juegoForm, titulo: e.target.value })
+                    }
                   />
                 </div>
 
@@ -68,6 +133,13 @@ const Subir = () => {
                       type="text"
                       className="form-control"
                       placeholder="Devir"
+                      value={juegoForm.editorial}
+                      onChange={(e) =>
+                        setJuegoForm({
+                          ...juegoForm,
+                          editorial: e.target.value,
+                        })
+                      }
                     />
                   </div>
                   <div className="col-5">
@@ -76,6 +148,13 @@ const Subir = () => {
                       type="number"
                       className="form-control"
                       placeholder="25"
+                      value={juegoForm.tiempoDeJuego}
+                      onChange={(e) =>
+                        setJuegoForm({
+                          ...juegoForm,
+                          tiempoDeJuego: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -87,6 +166,13 @@ const Subir = () => {
                     rows="5"
                     className="form-control"
                     placeholder="Catán es un popular juego de mesa estratégico en el que los jugadores colonizan una isla, construyendo asentamientos y carreteras, intercambiando recursos y compitiendo por obtener la mayor cantidad de puntos de victoria."
+                    value={juegoForm.descripcion}
+                    onChange={(e) =>
+                      setJuegoForm({
+                        ...juegoForm,
+                        descripcion: e.target.value,
+                      })
+                    }
                   ></textarea>
                 </div>
               </div>
@@ -112,6 +198,21 @@ const Subir = () => {
             </button>
           </div>
         </form>
+
+        <div>
+          <br />
+          {subir ? (
+            subirOk ? (
+              <span className="fuente3">Juego Subido con Éxtio!</span>
+            ) : (
+              <span className="fuente2">
+                No se pudo subir el juego cargado!
+              </span>
+            )
+          ) : (
+            <br />
+          )}
+        </div>
       </div>
 
       <div className="container bg-lista">

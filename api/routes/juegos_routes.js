@@ -5,6 +5,7 @@ import {
   getJuegoTitulo,
   getJuegoCategoria,
   getJuegosPagina,
+  getJuegosUsuario,
   getJuegosOrden,
   getJuegoId,
   createJuego,
@@ -37,6 +38,10 @@ ruta.get('/', (req, res) => {
   // busqueda de juegos con paginado
   else if (req.query.pagina) {
     resultado = getJuegosPagina(req.query.pagina);
+  }
+  // busqueda de juegos por Id de Usuario
+  else if (req.query.usuario) {
+    resultado = getJuegosUsuario(req.query.usuario);
   }
   // busqueda de juegos ordenados por titulo
   else if (req.query.ordenado) {

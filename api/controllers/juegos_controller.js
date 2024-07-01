@@ -26,6 +26,11 @@ async function getJuegosPagina(pagina) {
   return juegos;
 }
 
+async function getJuegosUsuario(idUsuario) {
+  let juegosSelec = await Juegos.find({ idUsuarioAlta: idUsuario });
+  return juegosSelec;
+}
+
 async function getJuegosOrden() {
   let juegos = await Juegos.find();
   juegos.sort(function (a, b) {
@@ -83,6 +88,7 @@ export {
   getJuegoTitulo,
   getJuegoCategoria,
   getJuegosPagina,
+  getJuegosUsuario,
   getJuegosOrden,
   getJuegoId,
   createJuego,
