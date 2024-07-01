@@ -3,11 +3,11 @@ import mongoose from 'mongoose';
 // Schema
 const favoritosSchema = new mongoose.Schema({
   idUsuario: {
-    type: Number,
+    type: String,
     required: true,
   },
   idJuego: {
-    type: Number,
+    type: String,
     required: true,
   },
 });

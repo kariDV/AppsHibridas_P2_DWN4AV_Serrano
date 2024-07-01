@@ -41,28 +41,27 @@ async function getJuegosOrden() {
 }
 
 async function getJuegoId(idJuego) {
-  let juegoSelec = await Juegos.find({ idJuego: idJuego });
+  let juegoSelec = await Juegos.find({ _id: idJuego });
   return juegoSelec;
 }
 
 async function createJuego(body) {
   let nuevoJuego = new Juegos({
-    idJuego: body.idJuego,
     titulo: body.titulo,
     categoria: body.categoria,
     descripcion: body.descripcion,
     editorial: body.editorial,
     tiempoDeJuego: body.tiempoDeJuego,
+    idUsuarioAlta: body.idUsuarioAlta,
   });
   return await nuevoJuego.save();
 }
 
 async function updateJuegoId(idJuego, body) {
   let juegoModificado = Juegos.updateOne(
-    { idJuego: idJuego },
+    { _id: idJuego },
     {
       $set: {
-        idJuego: body.idJuego,
         titulo: body.titulo,
         categoria: body.categoria,
         descripcion: body.descripcion,
@@ -75,7 +74,7 @@ async function updateJuegoId(idJuego, body) {
 }
 
 async function deleteJuegoId(idJuego) {
-  let juegoDelete = Juegos.findOneAndDelete({ idJuego: idJuego });
+  let juegoDelete = Juegos.findOneAndDelete({ _id: idJuego });
   return juegoDelete;
 }
 

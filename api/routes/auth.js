@@ -23,6 +23,7 @@ ruta.post('/', (req, res) => {
               usuario: {
                 _id: usuario._id,
                 email: usuario.email,
+                alias: usuario.alias,
               },
             },
             process.env.SEED,
@@ -32,8 +33,8 @@ ruta.post('/', (req, res) => {
           res.status(200).json({
             usuario: {
               _id: usuario._id,
-              idUsuario: usuario.idUsuario,
               email: usuario.email,
+              alias: usuario.alias,
             },
             tokenJwt,
           });

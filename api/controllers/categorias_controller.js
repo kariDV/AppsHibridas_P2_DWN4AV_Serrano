@@ -14,13 +14,12 @@ async function getCategoriaTitulo(tit) {
 }
 
 async function getCategoriaId(idCategoria) {
-  let categoria = await Categorias.find({ idCategoria: idCategoria });
+  let categoria = await Categorias.find({ _id: idCategoria });
   return categoria;
 }
 
 async function createCategoria(body) {
   let nuevaCategoria = new Categorias({
-    idCategoria: body.idCategoria,
     titulo: body.titulo,
     descripcion: body.descripcion,
   });
@@ -29,10 +28,9 @@ async function createCategoria(body) {
 
 async function updateCatId(idCategoria, body) {
   let cateModificada = Categorias.updateOne(
-    { idCategoria: idCategoria },
+    { _id: idCategoria },
     {
       $set: {
-        idCategoria: body.idCategoria,
         titulo: body.titulo,
         descripcion: body.descripcion,
       },
@@ -42,7 +40,7 @@ async function updateCatId(idCategoria, body) {
 }
 
 async function deleteCatId(idCategoria) {
-  let catDelete = Categorias.findOneAndDelete({ idCategoria: idCategoria });
+  let catDelete = Categorias.findOneAndDelete({ _id: idCategoria });
   return catDelete;
 }
 

@@ -2,11 +2,6 @@ import mongoose from 'mongoose';
 
 // Schema
 const juegoSchema = new mongoose.Schema({
-  idJuego: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
   titulo: {
     type: String,
     required: true,
@@ -26,6 +21,10 @@ const juegoSchema = new mongoose.Schema({
   tiempoDeJuego: {
     type: Number,
     required: false,
+  },
+  idUsuarioAlta: {
+    type: String,
+    required: true,
   },
 });
 
