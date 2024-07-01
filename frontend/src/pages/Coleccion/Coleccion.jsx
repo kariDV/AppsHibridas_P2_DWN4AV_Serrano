@@ -10,13 +10,34 @@ import {
   faHammer,
   faHandHoldingDollar,
   faHandshakeAngle,
+  faHeart as faHeartFav,
   faWandMagicSparkles,
 } from '@fortawesome/free-solid-svg-icons';
-// import portadaPng from '../../assets/img/portada.png';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
+// Componente REACT.js - Coleccion
 const Coleccion = () => {
-  const [user, setUsers] = useState([]);
-  const [loading, setLoading] = useState([]);
+  // HOOKS
+  const [favorito, setFavorito] = useState(false);
+  const [juegos, setJuegos] = useState([]);
+
+  useEffect(() => {
+    buscarJuegos();
+  }, []);
+
+  // FUNCIONES
+  const handleFavorito = function () {
+    setFavorito(!favorito);
+  };
+
+  const buscarJuegos = function () {
+    try {
+      const res = axios.get('http://localhost:3000/api/juegos');
+      res.then((resAPI) => setJuegos(resAPI.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <main>
@@ -123,109 +144,53 @@ const Coleccion = () => {
 
       <div className="container">
         <ol>
-          <li className="mb-5">
-            <div className="box-juegos d-flex justify-content-start">
-              <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
-                Love Letter
-              </h2>
-              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span className="title-info">Categoría</span>
-                <p className="">Party</p>
-              </div>
-              <div className="col-1 d-flex flex-column">
-                <div className="mb-2">
-                  <span className="title-info">Editorial</span>
-                  <p className="">Devir</p>
+          {juegos.map((juego) => (
+            <li className="mb-5" key={juego.idJuego}>
+              <div className="box-juegos d-flex justify-content-start">
+                <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
+                  {juego.titulo}
+                </h2>
+                <div className="col-1 d-flex flex-column justify-content-start align-items-start">
+                  <span className="title-info">Categoría</span>
+                  <p className="">{juego.idCategoria}</p>
                 </div>
-                <div>
-                  <span className="title-info">Tiempo</span>
-                  <p className="">30' a 45'</p>
+                <div className="col-1 d-flex flex-column">
+                  <div className="mb-2">
+                    <span className="title-info">Editorial</span>
+                    <p className="">{juego.editorial}</p>
+                  </div>
+                  <div>
+                    <span className="title-info">Tiempo</span>
+                    <p className="">{juego.tiempoDeJuego}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-5 d-flex flex-column">
-                <span className="title-info">Descripción</span>
-                <p className="">
-                  Love Letter es un juego de cartas estratégico y rápido para 2
-                  a 4 jugadores. Los jugadores intentan entregar su carta de
-                  amor a la princesa mientras eliminan a sus oponentes usando
-                  efectos de cartas. El objetivo es ser el último en pie o tener
-                  la carta de mayor valor al final de la ronda.
-                </p>
-              </div>
-              <div className="col-1 d-flex flex-column justify-content-center align-items-end">
-                <span className="title-info-alta">Subido por :</span>
-                <p className="text-center user-alta">Elfa del Bosque</p>
-              </div>
+                <div className="col-5 d-flex flex-column">
+                  <span className="title-info">Descripción</span>
+                  <p className="">{juego.descripcion}</p>
+                </div>
+                <div className="col-1 d-flex flex-column justify-content-center align-items-end">
+                  <span className="title-info-alta">Subido por :</span>
+                  <p className="text-center user-alta">Elfa del Bosque</p>
+                </div>
 
-              <div className="col-1 d-flex justify-content-center align-items-center">
-                {/* <input
-                  type="checkbox"
-                  id="heart-checkbox"
-                  className="heart-checkbox"
-                />
-                <label for="heart-checkbox" className="heart-label"></label> */}
-              </div>
-            </div>
-          </li>
-          <li className="mb-5">
-            <div className="box-juegos d-flex justify-content-start">
-              <h2 className="col-3 fuente6 d-flex justify-content-start align-items-center">
-                Love Letter
-              </h2>
-              <div className="col-1 d-flex flex-column justify-content-start align-items-start">
-                <span className="title-info">Categoría</span>
-                <p className="">Party</p>
-              </div>
-              <div className="col-1 d-flex flex-column">
-                <div className="mb-2">
-                  <span className="title-info">Editorial</span>
-                  <p className="">Devir</p>
-                </div>
-                <div>
-                  <span className="title-info">Tiempo</span>
-                  <p className="">30' a 45'</p>
+                <div className="col-1 d-flex justify-content-center align-items-center">
+                  <div onClick={handleFavorito}>
+                    {favorito ? (
+                      <FontAwesomeIcon
+                        icon={faHeartFav}
+                        className="fa-2xl heart-label"
+                      ></FontAwesomeIcon>
+                    ) : (
+                      <FontAwesomeIcon
+                        icon={faHeart}
+                        className="fa-2xl heart-label"
+                      ></FontAwesomeIcon>
+                    )}
+                  </div>
                 </div>
               </div>
-              <div className="col-5 d-flex flex-column">
-                <span className="title-info">Descripción</span>
-                <p className="">
-                  Love Letter es un juego de cartas estratégico y rápido para 2
-                  a 4 jugadores. Los jugadores intentan entregar su carta de
-                  amor a la princesa mientras eliminan a sus oponentes usando
-                  efectos de cartas. El objetivo es ser el último en pie o tener
-                  la carta de mayor valor al final de la ronda.
-                </p>
-              </div>
-              <div className="col-1 d-flex flex-column justify-content-center align-items-end">
-                <span className="title-info-alta">Subido por :</span>
-                <p className="text-center user-alta">Elfa del Bosque</p>
-              </div>
-
-              <div className="col-1 d-flex justify-content-center align-items-center">
-                {/* <input
-                  type="checkbox"
-                  id="heart-checkbox-1"
-                  className="heart-checkbox"
-                />
-                <label for="heart-checkbox-1" className="heart-label"></label> */}
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="box-juegos mt-5">
-              <p>JUEGO</p>
-            </div>
-          </li>
-          <li>
-            <div className="box-juegos mt-5">
-              <p>JUEGO</p>
-            </div>
-          </li>
-          <li>
-            <div className="box-juegos mt-5">
-              <p>JUEGO</p>
-            </div>
-          </li>
+            </li>
+          ))}
         </ol>
 
         <div className="d-flex justify-content-center mt-5">
