@@ -15,7 +15,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-// Componente REACT.js - Coleccion
 const Coleccion = () => {
   // HOOKS
   const [favorito, setFavorito] = useState(false);
